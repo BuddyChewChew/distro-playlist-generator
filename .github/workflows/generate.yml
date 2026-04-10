@@ -21,9 +21,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Ensure the output directory exists if you want to store files in a subfolder
-      # If you want them in the root, you can skip the mkdir step
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -42,12 +39,14 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          git add distrotv.m3u distrotv_raw.json
+          # Since the script now creates a 'playlists' folder, 
+          # we add the entire folder instead of individual files.
+          git add playlists/
           
-          # Only commit if there are changes
+          # Only commit if there are changes in the playlists directory
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🔄 Auto-update DistroTV playlists [$(date -u +'%Y-%m-%d %H:%M:%S') UTC]"
+            git commit -m "🔄 Auto-update DistroTV playlists & EPG [$(date -u +'%Y-%m-%d %H:%M:%S') UTC]"
             git push
           fi
