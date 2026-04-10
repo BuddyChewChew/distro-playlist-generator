@@ -14,20 +14,14 @@ JSON_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv_raw.json")
 EPG_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv.xml")
 M3U_ALL = os.path.join(OUTPUT_DIR, "distrotv_all.m3u")
 
-# This builds the full URL for GitHub Raw
-GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "username/repo") # Default for local testing
+GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "username/repo")
 EPG_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/playlists/distrotv.xml"
 
 GEOS = ["US", "JP", "CA", "MX"]
 
-ANDROID_UA = "Dalvik/2.1.0 (Linux; U; Android 9; AFTT Build/STT9.221129.002) GTV/AFTT DistroTV/2.0.9"
+# Standard Browser UA that Cloudfront/Distro expects
 BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-
-HLS_HEADERS = {
-    "User-Agent": BROWSER_UA,
-    "Origin": "https://distro.tv",
-    "Referer": "https://distro.tv/",
-}
+REFERER = "https://distro.tv/"
 
 FEED_BASE = "https://tv.jsrdn.com/tv_v5/getfeed.php?type=live"
 MACRO_RE = re.compile(r"__[^_].*?__")
@@ -82,14 +76,17 @@ def _sanitize_url(url: str) -> str:
         elif MACRO_RE.search(v or ""):
             v = ""
         sanitized.append((k, v))
-    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
+    # Build URL and append player headers for TiviMate/VLC compatibility
+    base_url = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
+    return f"{base_url}|User-Agent={BROWSER_UA}&Referer={REFERER}"
 
 def fetch_and_process():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
     session = requests.Session()
-    session.headers.update({"User-Agent": ANDROID_UA, "Accept": "application/json,*/*"})
+    # Using the same UA for the scraper itself
+    session.headers.update({"User-Agent": BROWSER_UA, "Accept": "application/json,*/*"})
     
     unique_channels = {} 
     geo_playlists = {geo: [] for geo in GEOS}
@@ -162,17 +159,14 @@ def fetch_and_process():
         except Exception as e:
             print(f"Error for {geo}: {e}")
 
-    # Header with full URL
     m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
 
-    # Write Master Playlist
     with open(M3U_ALL, "w", encoding="utf-8") as f:
         f.write(m3u_header)
         for c in unique_channels.values():
             f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]}",{c["name"]}\n')
             f.write(f'{c["url"]}\n')
 
-    # Write Regional Playlists
     for geo, channels in geo_playlists.items():
         geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
         with open(geo_file, "w", encoding="utf-8") as f:
@@ -181,7 +175,6 @@ def fetch_and_process():
                 f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]} [{geo}]",{c["name"]}\n')
                 f.write(f'{c["url"]}\n')
 
-    # Write EPG XML
     tree = ET.ElementTree(xml_root)
     ET.indent(tree, space="  ", level=0)
     tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
