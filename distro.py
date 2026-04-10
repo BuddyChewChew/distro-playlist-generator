@@ -14,6 +14,10 @@ JSON_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv_raw.json")
 EPG_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv.xml")
 M3U_ALL = os.path.join(OUTPUT_DIR, "distrotv_all.m3u")
 
+# This builds the full URL for GitHub Raw
+GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "username/repo") # Default for local testing
+EPG_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/playlists/distrotv.xml"
+
 GEOS = ["US", "JP", "CA", "MX"]
 
 ANDROID_UA = "Dalvik/2.1.0 (Linux; U; Android 9; AFTT Build/STT9.221129.002) GTV/AFTT DistroTV/2.0.9"
@@ -87,10 +91,8 @@ def fetch_and_process():
     session = requests.Session()
     session.headers.update({"User-Agent": ANDROID_UA, "Accept": "application/json,*/*"})
     
-    unique_channels = {} # To prevent duplicates in the 'All' playlist
+    unique_channels = {} 
     geo_playlists = {geo: [] for geo in GEOS}
-    
-    # EPG Setup
     xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
 
     for geo in GEOS:
@@ -136,19 +138,15 @@ def fetch_and_process():
                     "prog_title": ep.get("title", name)
                 }
 
-                # Add to Regional List
                 geo_playlists[geo].append(entry)
 
-                # Add to Master List (Unique by ID)
                 if show_id not in unique_channels:
                     unique_channels[show_id] = entry
                     
-                    # Add to EPG XML
                     chan_el = ET.SubElement(xml_root, "channel", id=tvg_id)
                     ET.SubElement(chan_el, "display-name").text = name
                     ET.SubElement(chan_el, "icon", src=logo)
 
-                    # Create a dummy 4-hour program entry for "Now"
                     start_time = datetime.now().strftime("%Y%m%d%H0000 +0000")
                     stop_time = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
                     
@@ -164,9 +162,12 @@ def fetch_and_process():
         except Exception as e:
             print(f"Error for {geo}: {e}")
 
+    # Header with full URL
+    m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
+
     # Write Master Playlist
     with open(M3U_ALL, "w", encoding="utf-8") as f:
-        f.write(f'#EXTM3U url-tvg="distrotv.xml"\n')
+        f.write(m3u_header)
         for c in unique_channels.values():
             f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]}",{c["name"]}\n')
             f.write(f'{c["url"]}\n')
@@ -175,7 +176,7 @@ def fetch_and_process():
     for geo, channels in geo_playlists.items():
         geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
         with open(geo_file, "w", encoding="utf-8") as f:
-            f.write(f'#EXTM3U url-tvg="distrotv.xml"\n')
+            f.write(m3u_header)
             for c in channels:
                 f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]} [{geo}]",{c["name"]}\n')
                 f.write(f'{c["url"]}\n')
@@ -185,11 +186,8 @@ def fetch_and_process():
     ET.indent(tree, space="  ", level=0)
     tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
 
-    # Write Raw JSON for debugging
     with open(JSON_OUTPUT, "w", encoding="utf-8") as f:
         json.dump(list(unique_channels.values()), f, indent=2, ensure_ascii=False)
-
-    print(f"Finished! Files generated in /{OUTPUT_DIR}")
 
 if __name__ == "__main__":
     fetch_and_process()
