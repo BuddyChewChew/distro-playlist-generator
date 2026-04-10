@@ -3,12 +3,16 @@ import json
 import re
 import time
 import uuid
-from datetime import datetime
-from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
+import os
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 # ==================== CONFIG ====================
-M3U_OUTPUT = "distrotv.m3u"
-JSON_OUTPUT = "distrotv_raw.json"
+OUTPUT_DIR = "playlists"
+JSON_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv_raw.json")
+EPG_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv.xml")
+M3U_ALL = os.path.join(OUTPUT_DIR, "distrotv_all.m3u")
 
 GEOS = ["US", "JP", "CA", "MX"]
 
@@ -26,32 +30,21 @@ MACRO_RE = re.compile(r"__[^_].*?__")
 
 MACRO_REPLACEMENTS = {
     "__CACHE_BUSTER__":         lambda: str(int(time.time() * 1000)),
-    "__DEVICE_ID__":               lambda: str(uuid.uuid4()),
-    "__LIMIT_AD_TRACKING__":       lambda: "0",
-    "__IS_GDPR__":                 lambda: "0",
-    "__IS_CCPA__":                 lambda: "0",
-    "__GEO_COUNTRY__":             lambda: "US",
-    "__LATITUDE__":                lambda: "",
-    "__LONGITUDE__":               lambda: "",
-    "__GEO_DMA__":                 lambda: "",
-    "__GEO_TYPE__":                lambda: "",
-    "__PAGEURL_ESC__":             lambda: "https%3A%2F%2Fdistro.tv%2F",
-    "__STORE_URL__":               lambda: "https%3A%2F%2Fdistro.tv%2F",
-    "__APP_BUNDLE__":              lambda: "distro.tv",
-    "__APP_VERSION__":             lambda: "0",
-    "__APP_CATEGORY__":            lambda: "",
-    "__WIDTH__":                   lambda: "1920",
-    "__HEIGHT__":                  lambda: "1080",
-    "__DEVICE__":                  lambda: "Linux",
-    "__DEVICE_ID_TYPE__":          lambda: "uuid",
-    "__DEVICE_CONNECTION_TYPE__": lambda: "",
-    "__DEVICE_CATEGORY__":         lambda: "desktop",
-    "__env.i__":                   lambda: "web",
-    "__env.u__":                   lambda: "web",
-    "__PALN__":                    lambda: "",
-    "__GDPR_CONSENT__":            lambda: "",
-    "__ADVERTISING_ID__":          lambda: "",
-    "__CLIENT_IP__":               lambda: "",
+    "__DEVICE_ID__":            lambda: str(uuid.uuid4()),
+    "__LIMIT_AD_TRACKING__":    lambda: "0",
+    "__IS_GDPR__":              lambda: "0",
+    "__IS_CCPA__":              lambda: "0",
+    "__GEO_COUNTRY__":          lambda: "US",
+    "__PAGEURL_ESC__":          lambda: "https%3A%2F%2Fdistro.tv%2F",
+    "__STORE_URL__":            lambda: "https%3A%2F%2Fdistro.tv%2F",
+    "__APP_BUNDLE__":           lambda: "distro.tv",
+    "__WIDTH__":                lambda: "1920",
+    "__HEIGHT__":               lambda: "1080",
+    "__DEVICE__":               lambda: "Linux",
+    "__DEVICE_ID_TYPE__":       lambda: "uuid",
+    "__DEVICE_CATEGORY__":      lambda: "desktop",
+    "__env.i__":                lambda: "web",
+    "__env.u__":                lambda: "web",
 }
 
 _LANG_TAGS = {'English', 'Spanish', 'Asian', 'African', 'Arabic', 'Middle Eastern', 'French', 'Portuguese', 'Hindi', 'Urdu', 'Korean', 'Japanese', 'Chinese', 'Tagalog', 'Vietnamese', 'Russian'}
@@ -62,8 +55,7 @@ _LANG_CODE = {
 }
 
 def _parse_distro_tags(raw: str):
-    if not raw:
-        return "DistroTV", "en"
+    if not raw: return "DistroTV", "en"
     tags = [t.strip() for t in raw.split(',') if t.strip()]
     genre_tags = []
     lang = 'en'
@@ -89,52 +81,115 @@ def _sanitize_url(url: str) -> str:
     return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
 
 def fetch_and_process():
-    print("=== DistroTV Rescraper ===")
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+
     session = requests.Session()
     session.headers.update({"User-Agent": ANDROID_UA, "Accept": "application/json,*/*"})
-    all_channels = []
-    m3u = ["#EXTM3U"]
+    
+    unique_channels = {} # To prevent duplicates in the 'All' playlist
+    geo_playlists = {geo: [] for geo in GEOS}
+    
+    # EPG Setup
+    xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
 
     for geo in GEOS:
+        print(f"Scraping Geo: {geo}...")
         url = f"{FEED_BASE}&geo={geo}" if geo != "US" else FEED_BASE
         try:
             r = session.get(url, timeout=30)
             r.raise_for_status()
             feed = r.json()
             
-            if isinstance(feed, dict) and "shows" in feed:
-                shows_data = feed["shows"]
-                shows = list(shows_data.values()) if isinstance(shows_data, dict) else shows_data
-            else:
-                shows = [v for v in feed.values() if isinstance(v, dict)] if isinstance(feed, dict) else feed
+            shows_data = feed.get("shows", {})
+            shows = list(shows_data.values()) if isinstance(shows_data, dict) else shows_data
 
             for show in shows:
                 if not isinstance(show, dict) or show.get("type") != "live":
                     continue
-                name = (show.get("title") or "").strip()
-                if not name: continue
                 
+                show_id = str(show.get('id'))
+                name = (show.get("title") or "").strip()
                 logo = show.get("img_logo") or ""
                 category, lang = _parse_distro_tags(show.get("genre") or "")
                 
                 seasons = show.get("seasons") or []
-                if seasons and seasons[0].get("episodes"):
-                    ep = seasons[0]["episodes"][0]
-                    raw_url = ep.get("content", {}).get("url")
-                    if raw_url:
-                        stream_url = _sanitize_url(raw_url)
-                        tvg_id = f"distro.{geo}.{show.get('id')}"
-                        group = f"DistroTV • {geo} • {category}"
-                        m3u.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{group}",{name} [{geo}]')
-                        m3u.append(stream_url)
-                        all_channels.append(show)
+                if not seasons or not seasons[0].get("episodes"):
+                    continue
+                
+                ep = seasons[0]["episodes"][0]
+                raw_url = ep.get("content", {}).get("url")
+                if not raw_url: continue
+                
+                stream_url = _sanitize_url(raw_url)
+                tvg_id = f"distro.{show_id}"
+                group = f"DistroTV • {category}"
+
+                entry = {
+                    "id": tvg_id,
+                    "name": name,
+                    "logo": logo,
+                    "group": group,
+                    "url": stream_url,
+                    "lang": lang,
+                    "desc": show.get("description", ""),
+                    "prog_title": ep.get("title", name)
+                }
+
+                # Add to Regional List
+                geo_playlists[geo].append(entry)
+
+                # Add to Master List (Unique by ID)
+                if show_id not in unique_channels:
+                    unique_channels[show_id] = entry
+                    
+                    # Add to EPG XML
+                    chan_el = ET.SubElement(xml_root, "channel", id=tvg_id)
+                    ET.SubElement(chan_el, "display-name").text = name
+                    ET.SubElement(chan_el, "icon", src=logo)
+
+                    # Create a dummy 4-hour program entry for "Now"
+                    start_time = datetime.now().strftime("%Y%m%d%H0000 +0000")
+                    stop_time = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
+                    
+                    prog_el = ET.SubElement(xml_root, "programme", {
+                        "start": start_time,
+                        "stop": stop_time,
+                        "channel": tvg_id
+                    })
+                    ET.SubElement(prog_el, "title", lang=lang).text = entry["prog_title"]
+                    ET.SubElement(prog_el, "desc", lang=lang).text = entry["desc"]
+                    ET.SubElement(prog_el, "category", lang="en").text = category
+
         except Exception as e:
             print(f"Error for {geo}: {e}")
 
-    with open(M3U_OUTPUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(m3u) + "\n")
+    # Write Master Playlist
+    with open(M3U_ALL, "w", encoding="utf-8") as f:
+        f.write(f'#EXTM3U url-tvg="distrotv.xml"\n')
+        for c in unique_channels.values():
+            f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]}",{c["name"]}\n')
+            f.write(f'{c["url"]}\n')
+
+    # Write Regional Playlists
+    for geo, channels in geo_playlists.items():
+        geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
+        with open(geo_file, "w", encoding="utf-8") as f:
+            f.write(f'#EXTM3U url-tvg="distrotv.xml"\n')
+            for c in channels:
+                f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]} [{geo}]",{c["name"]}\n')
+                f.write(f'{c["url"]}\n')
+
+    # Write EPG XML
+    tree = ET.ElementTree(xml_root)
+    ET.indent(tree, space="  ", level=0)
+    tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
+
+    # Write Raw JSON for debugging
     with open(JSON_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(all_channels, f, indent=2, ensure_ascii=False)
+        json.dump(list(unique_channels.values()), f, indent=2, ensure_ascii=False)
+
+    print(f"Finished! Files generated in /{OUTPUT_DIR}")
 
 if __name__ == "__main__":
     fetch_and_process()
