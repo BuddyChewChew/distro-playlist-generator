@@ -96,7 +96,6 @@ def fetch_and_process():
             r.raise_for_status()
             feed = r.json()
             
-            # Handle different JSON structures (dict vs list)
             shows_data = feed.get("shows", {})
             if isinstance(shows_data, dict):
                 shows = list(shows_data.values())
@@ -108,25 +107,36 @@ def fetch_and_process():
             for show in shows:
                 if not isinstance(show, dict): continue
                 
-                # Check for live stream content
+                # --- LIVE FILTER START ---
+                # 1. Check if the show type is explicitly 'live'
+                if show.get("type") != "live":
+                    continue
+                
                 seasons = show.get("seasons", [])
                 if not seasons or not isinstance(seasons[0], dict): continue
                 episodes = seasons[0].get("episodes", [])
                 if not episodes or not isinstance(episodes[0], dict): continue
                 
                 ep = episodes[0]
-                raw_url = ep.get("content", {}).get("url")
+                content = ep.get("content", {})
+                
+                # 2. Check if the episode content itself is marked as live
+                if content.get("streamtype") != "live" and content.get("islive") != "1":
+                    # Some entries might lack these but still be valid live streams
+                    # We only skip if they are explicitly marked as something else
+                    pass 
+
+                raw_url = content.get("url")
                 if not raw_url: continue
+                # --- LIVE FILTER END ---
 
                 show_id = str(show.get('id', ''))
                 if not show_id: continue
 
-                # Store for geo-specific playlist
                 geo_to_ids[geo].append(show_id)
 
-                # Store unique channel info if not already captured
                 if show_id not in all_extracted_channels:
-                    name = (show.get("title") or "Unknown Channel").strip()
+                    name = (show.get("title") or "Unknown").strip()
                     logo = show.get("img_logo") or ""
                     category, lang = _parse_distro_tags(show.get("genre") or "")
                     
@@ -144,9 +154,7 @@ def fetch_and_process():
         except Exception as e:
             print(f"Error fetching {geo}: {e}")
 
-    # --- GENERATE FILES ---
-    
-    # 1. XMLTV EPG
+    # Generate XMLTV
     xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
     for sid, c in all_extracted_channels.items():
         chan_el = ET.SubElement(xml_root, "channel", id=c["id"])
@@ -164,7 +172,7 @@ def fetch_and_process():
     ET.indent(tree, space="  ", level=0)
     tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
 
-    # 2. Master M3U (All Unique Channels)
+    # Generate Playlists
     m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
     with open(M3U_ALL, "w", encoding="utf-8") as f:
         f.write(m3u_header)
@@ -172,7 +180,6 @@ def fetch_and_process():
             f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {c["category"]}",{c["name"]}\n')
             f.write(f'{c["url"]}\n')
 
-    # 3. Regional M3Us
     for geo, ids in geo_to_ids.items():
         if not ids: continue
         geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
@@ -183,7 +190,7 @@ def fetch_and_process():
                 f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {geo} • {c["category"]}",{c["name"]}\n')
                 f.write(f'{c["url"]}\n')
 
-    print(f"Success! Found {len(all_extracted_channels)} total unique channels.")
+    print(f"Success! Generated {len(all_extracted_channels)} live channels.")
 
 if __name__ == "__main__":
     fetch_and_process()
