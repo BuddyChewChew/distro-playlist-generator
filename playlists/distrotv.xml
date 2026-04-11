@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <tv generator-info-name="DistroTV-Scraper">
+  <channel id="distro.296">
+    <display-name>FTF Sports</display-name>
+    <icon src="https://a.jsrdn.com/hls/22729/ftf-sports/logo_20231219_202018_46.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.296">
+    <title lang="en">FTF Sports</title>
+    <desc lang="en">FTF Sports is an emerging worldwide network offering engaging video content established to serve the passionate fan's appreciation for competition, sportsmanship, and performance. FTF Sports features a 24/7 broadcast, including live games &amp; events, interviews, predictions, analysis, and a variety of dynamic, original programming.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <channel id="distro.415">
     <display-name>Horizon Sports</display-name>
     <icon src="https://a.jsrdn.com/hls/22705/horizon-sports/logo_20231219_213910_70.png" />
@@ -26,6 +35,33 @@
     <title lang="en">Outside</title>
     <desc lang="en">The ultimate channel of adventure sports and outdoor lifestyle videos, proving high-quality, compelling storylines focused on a wide variety of sports including skiing &amp; snowboarding, surfing, climbing, mountain biking, kayaking and more.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.616">
+    <display-name>Dove</display-name>
+    <icon src="https://a.jsrdn.com/hls/22787/dove/logo_20250204_185615_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.616">
+    <title lang="en">Dove</title>
+    <desc lang="en">Escape to romance and excitement with Dove, where heartwarming stories, light-hearted romances, inspiring dramas, and holiday escapes await. Your home away from home. Live. Laugh. Dove.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.650">
+    <display-name>The First</display-name>
+    <icon src="https://a.jsrdn.com/hls/22803/the-first/logo_20231219_223053_36.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.650">
+    <title lang="en">The First</title>
+    <desc lang="en">The First is the new network for free speech and big ideas, and the new TV home of Bill O'Reilly. The First is designed for Americans who love freedom and bold opinions. Hosts include Dana Loesch, Buck Sexton, Jesse Kelly, Mike Slater, and top contributors.</desc>
+    <category lang="en">News</category>
+  </programme>
+  <channel id="distro.1031">
+    <display-name>Newsmax TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/22819/newsmax-tv/logo_20231219_220350_38.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1031">
+    <title lang="en">Newsmax TV</title>
+    <desc lang="en">Newsmax covers the latest developments in politics, national and world news, health, faith, personal finance, and technology with a unique American perspective and topics that the major media often ignore.</desc>
+    <category lang="en">News</category>
   </programme>
   <channel id="distro.1055">
     <display-name>Lone Star</display-name>
@@ -81,6 +117,141 @@
     <desc lang="en">AWE Plus is your vicarious living channel. Enjoy awe-inspiring travel destinations, outrageous cars, amazing homes and much more.</desc>
     <category lang="en">Lifestyle</category>
   </programme>
+  <channel id="distro.1101">
+    <display-name>Qello Concerts</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-qello/logo_20231219_221133_51.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1101">
+    <title lang="en">Qello</title>
+    <desc lang="en">Stingray Qello presents your front-row seat to concerts by your favorite artists, bands, and musicians! Experience the encore with thrilling concert-films and get up close and personal with award-winning documentaries.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1102">
+    <display-name>Stingray Karaoke</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-karaoke/logo_20231219_222517_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1102">
+    <title lang="en">Karaoke</title>
+    <desc lang="en">Gather with friends to sing your heart out to your favorite tracks with Stingray Karaoke. From yesterday’s golden oldies to today’s hits, we got you!</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1103">
+    <display-name>Stingray Naturescape</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-naturescape/logo_20231219_222535_48.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1103">
+    <title lang="en">Naturescape</title>
+    <desc lang="en">Stingray Naturescape offers you an escape to a world of stunning nature scenes, all set to peaceful soundtracks. Relax to a crackling fireplace, soar over a tropical paradise, or get inspired by a sparkling night sky, all from the comfort of home.</desc>
+    <category lang="en">Travel</category>
+  </programme>
+  <channel id="distro.1104">
+    <display-name>Stingray Classica</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-classica/logo_20231219_222229_59.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1104">
+    <title lang="en">Classica</title>
+    <desc lang="en">Stingray Classica presents the most beloved masterpieces, breathtaking ballets, opulent operas, and enchanting chamber music! Start your classical music journey now to enjoy spectacular performances, recorded in the world’s grandest venues, featuring world-class conductors, singers, and soloists.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1105">
+    <display-name>Stingray DJAZZ</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-djazz/logo_20231219_222248_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1105">
+    <title lang="en">DJazz</title>
+    <desc lang="en">Whether you love acid jazz, big band, ragtime, mainstream jazz, or anything in between, experience the most diverse and in-depth concert, performance, and documentary programming on Stingray DJAZZ.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1106">
+    <display-name>Stingray Hit List</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-hit-list/logo_20231219_222438_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1106">
+    <title lang="en">Hit List</title>
+    <desc lang="en">Tune in for a dose of today’s hits and a preview of tomorrow’s sensations. You’ll discover the next chart-toppers before everyone else!</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1107">
+    <display-name>Stingray Hot Country</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-hot-country/logo_20231219_222458_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1107">
+    <title lang="en">Hot Country</title>
+    <desc lang="en">Hot Country rounds up brand new country hits and favorites from the past decade.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1108">
+    <display-name>Stingray Rock Alternative</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-rock-alternative/logo_20231219_222631_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1108">
+    <title lang="en">Rock Alternative</title>
+    <desc lang="en">Experience the intensity of the best alternative rock sound. Features hard-hitting acts like Arcade Fire, Billy Talent, The Black Keys, etc.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1109">
+    <display-name>Stingray Pop Adult</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-pop-adult/logo_20231219_222554_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1109">
+    <title lang="en">Pop Adult</title>
+    <desc lang="en">A romantic mix of pop adult classics. Features current hit makers like Adele and Maroon 5, and timeless favorites such as U2 and Madonna.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1110">
+    <display-name>Stingray Classic Rock</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-classic-rock/logo_20231219_222210_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1110">
+    <title lang="en">Classic Rock</title>
+    <desc lang="en">Return to the classic rock revolution of the ’60, ‘70s, and ’80 with legends like Janis Joplin, Peter Frampton, and The Rolling Stones.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1111">
+    <display-name>Stingray Remember the 80s</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stringray-remember-the-80s/logo_20231219_222612_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1111">
+    <title lang="en">Remember the 80s</title>
+    <desc lang="en">Relive your neon-bright ‘80s memories with the synth-pop sound of stars such as Michael Jackson, George Michael, and Whitney Houston.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1112">
+    <display-name>Stingray Éxitos del Momento</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-todays-latin-pop/logo_20231219_222310_55.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1112">
+    <title lang="es">Éxitos del Momento</title>
+    <desc lang="es">Dance along to today's hottest Latin music in genres such as salsa, samba, merengue, flamenco, tango, reggaeton, and reggae.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1113">
+    <display-name>Stingray Greatest Hits</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-greatest-hits/logo_20231219_222354_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1113">
+    <title lang="en">Greatest Hits</title>
+    <desc lang="en">A channel filled with the greatest hits by the most popular bands and artists of all time. A guaranteed crowd-pleaser for every occasion.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1114">
+    <display-name>Stingray HipHop and RnB</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-hiphop-and-rnb/logo_20231219_222417_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1114">
+    <title lang="en">HipHop and RnB</title>
+    <desc lang="en">Turn up the volume on the grittiest sounds of today's hip hop scene, featuring hits by Beyoncé, T-Pain, Rick Ross, Nicki Minaj, etc.</desc>
+    <category lang="en">Music</category>
+  </programme>
+  <channel id="distro.1115">
+    <display-name>Stingray Flashback 70s</display-name>
+    <icon src="https://a.jsrdn.com/hls/22865/stingray-flashback-70s/logo_20231219_222333_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1115">
+    <title lang="en">Flashback 70's</title>
+    <desc lang="en">Travel back to an explosive decade in music when Abba, Jackson 5, Kool and the Gang, the Bee Gees, and Carole King reigned on the charts.</desc>
+    <category lang="en">Music</category>
+  </programme>
   <channel id="distro.1116">
     <display-name>Schwab Network</display-name>
     <icon src="https://a.jsrdn.com/hls/22849/schwab-network/logo_20231219_221750_68.png" />
@@ -107,6 +278,24 @@
     <title lang="en">World Poker Tour</title>
     <desc lang="en">World Poker Tour ignited the global poker boom with a unique television show based on a series of high-stakes tournaments. WPT events turned Gus Hansen into the Great Dane and Daniel Negreanu into Kid Poker, and created dozens of poker-made millionaires.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.1187">
+    <display-name>Law &amp; Crime</display-name>
+    <icon src="https://a.jsrdn.com/hls/22884/law-crime/logo_20240131_212533_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1187">
+    <title lang="en">Law &amp; Crime</title>
+    <desc lang="en">Law&amp;Crime is the leading destination for true crime and law enforcement programming. Founded by acclaimed legal analyst and attorney Dan Abrams, Law&amp;Crime offers an inside look at the compelling world of law enforcement, featuring in-depth bodycam footage and more. Our daily lineup includes binge-worthy law enforcement series plus original primetime programming.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.1195">
+    <display-name>24 Hour Free Movies</display-name>
+    <icon src="https://a.jsrdn.com/hls/22907/24-hour-free-movies/logo_20231219_183702_63.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1195">
+    <title lang="en">24 Hour Free Movies</title>
+    <desc lang="en">24 Hour Free Movies brings you a growing collection of popular movies and TV shows from around the world. Always Free . . . Always Fun.</desc>
+    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.1207">
     <display-name>SKWAD</display-name>
@@ -252,6 +441,33 @@
     <desc lang="es">El único canal de noticias internacional con una perspectiva europea. Su misión es permitir que cada uno se forme su propia opinión. Euronews se define por su imparcialidad e independencia.</desc>
     <category lang="en">News</category>
   </programme>
+  <channel id="distro.1257">
+    <display-name>Bloomberg Television</display-name>
+    <icon src="https://a.jsrdn.com/hls/22938/bloomberg-television/logo_20231219_184756_59.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1257">
+    <title lang="en">Bloomberg Television</title>
+    <desc lang="en">Bloomberg Television delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News.</desc>
+    <category lang="en">Finance</category>
+  </programme>
+  <channel id="distro.1259">
+    <display-name>CineLife</display-name>
+    <icon src="https://a.jsrdn.com/hls/22933/cinelife/logo_20231219_192316_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1259">
+    <title lang="en">CineLife</title>
+    <desc lang="en">CineLife, the destination for top-rated independent films and award-winning documentaries.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.1641">
+    <display-name>Bloomberg Originals</display-name>
+    <icon src="https://a.jsrdn.com/hls/22938/bloomberg-originals/logo_20231219_184737_67.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1641">
+    <title lang="en">Bloomberg Originals</title>
+    <desc lang="en">Bloomberg Originals is streaming news for a global view and an informed take. Watch live news on the stories changing your business and your world, powered by 2700 journalists in 120 countries.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
   <channel id="distro.1684">
     <display-name>XFC TV</display-name>
     <icon src="https://a.jsrdn.com/hls/22915/xfc-tv/logo_20231219_224405_58.png" />
@@ -260,6 +476,33 @@
     <title lang="en">XFC TV</title>
     <desc lang="en">Welcome to XFC TV! Home of the XFC FightWorld Network.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.1686">
+    <display-name>NOST - The Nostalgia Network</display-name>
+    <icon src="https://a.jsrdn.com/hls/22956/nost-the-nostalgia-network/logo_20231219_220428_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1686">
+    <title lang="en">NOST - The Nostalgia Network</title>
+    <desc lang="en">Classic movies and legendary stars from the Golden age of Hollywood.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.1687">
+    <display-name>ShopLC</display-name>
+    <icon src="https://a.jsrdn.com/hls/22957/shoplc/logo_20231219_221828_30.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1687">
+    <title lang="en">Shop LC</title>
+    <desc lang="en">Shop LC, the fastest growing video shopping network in America, offers you the lowest prices and greatest value guaranteed…From designer jewelry, watches, beauty products, fashionable apparel and handbags, great gift items and accessories… and so much more!! Shop LC, Delivering Joy 24/7/365!</desc>
+    <category lang="en">Lifestyle</category>
+  </programme>
+  <channel id="distro.1709">
+    <display-name>Journy</display-name>
+    <icon src="https://a.jsrdn.com/hls/22944/journy/logo_20231219_214422_44.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1709">
+    <title lang="en">Journy</title>
+    <desc lang="en">JOURNY is the only channel at the intersection of travel, art, and culture! Watch curated content focused on immersive experiences and unique storytelling.</desc>
+    <category lang="en">Travel</category>
   </programme>
   <channel id="distro.1714">
     <display-name>MotorRacing</display-name>
@@ -277,15 +520,6 @@
   <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1741">
     <title lang="asian">WION World is One News</title>
     <desc lang="asian">WION (World is One News) is one of the fastest growing News channels in the world. WION a multinational English news channel examines global issues with in-depth analysis. It is a 24x7 News Network with presence is 80 countries and growing. WION is headquartered in New Delhi, India.</desc>
-    <category lang="en">News</category>
-  </programme>
-  <channel id="distro.1755">
-    <display-name>Times Now News</display-name>
-    <icon src="https://a.jsrdn.com/hls/22979/times-now-news/logo_20231219_223209_62.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1755">
-    <title lang="asian">Times Now News</title>
-    <desc lang="asian">Times Now with its credo Now or Nothing takes the centre stage of influencing the influencer, by delivering the most compelling and irreplaceable content to the viewers. Times Now is India’s no. 1 and most viewed English current affairs news channel for over 15 years, in over 100+ countries.</desc>
     <category lang="en">News</category>
   </programme>
   <channel id="distro.1760">
@@ -324,14 +558,23 @@
     <desc lang="asian">TIMES NETWORK’s first venture in the Hindi News category for HD audience, Times Now Navbharat has ground-breaking innovation and creates a new genre of content. It is an expert curator of segmented and differentiated content across news and entertainment genre.</desc>
     <category lang="en">News</category>
   </programme>
-  <channel id="distro.1809">
-    <display-name>Zoom</display-name>
-    <icon src="https://a.jsrdn.com/hls/22979/zoom-tv/logo_20231219_224525_56.png" />
+  <channel id="distro.2199">
+    <display-name>ACE TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/22990/ace-tv/logo_20231219_183914_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1809">
-    <title lang="asian">Zoom</title>
-    <desc lang="asian">India’s largest Bollywood Channel and young India’s newest Entertainment Channel. Zoom offers a wide variety of premium entertaining content, from original shows, Bollywood news, gossips, music, to superstar interviews, and film reviews.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2199">
+    <title lang="en">ACE TV</title>
+    <desc lang="en">Unforgettable TV shows and movies traditionally popular through the years, mixed with an exciting variety of programming including Mixed Martial Arts.</desc>
     <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.2212">
+    <display-name>Real America's Voice</display-name>
+    <icon src="https://a.jsrdn.com/hls/22995/real-americas-voice/logo_20231219_221226_64.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2212">
+    <title lang="en">Real America's Voice</title>
+    <desc lang="en">Delivering news programs and live-event coverage that captures the authentic voice and passion of real people all across America. Just Real News &amp; Honest Views!</desc>
+    <category lang="en">News</category>
   </programme>
   <channel id="distro.2507">
     <display-name>Powersports World</display-name>
@@ -369,6 +612,15 @@
     <desc lang="en">True History introduces you to the moments, places, and people that have shaped modern life with the world’s best and most dynamic professors as the stars of the show.</desc>
     <category lang="en">Education</category>
   </programme>
+  <channel id="distro.2653">
+    <display-name>AfroLandTV</display-name>
+    <icon src="https://a.jsrdn.com/hls/23000/afrolandtv/logo_20231219_184044_45.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2653">
+    <title lang="african">AfroLandTV</title>
+    <desc lang="african">Watch hundreds of free African movies, Nollywood, and TV shows from Africa and its diaspora!</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
   <channel id="distro.2674">
     <display-name>ACL Cornhole TV</display-name>
     <icon src="https://a.jsrdn.com/hls/22964/acl-cornhole-tv/logo_20231219_183932_68.png" />
@@ -395,6 +647,15 @@
     <title lang="asian">TV Punjab</title>
     <desc lang="asian">TV Punjab provides authentic and credible news and high-quality entertainment content featuring Punjabi language. Television Punjab content is designed to reflex the various cultural elements of Punjab.</desc>
     <category lang="en">News</category>
+  </programme>
+  <channel id="distro.2842">
+    <display-name>Swerve Combat</display-name>
+    <icon src="https://a.jsrdn.com/hls/23018/swerve-combat/logo_20231219_222813_26.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2842">
+    <title lang="en">Swerve Combat</title>
+    <desc lang="en">Swerve Combat delivers non-stop action with boxing, MMA, wrestling, and strength competitions along with gripping stories about the world’s most inspirational athletes.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <channel id="distro.2889">
     <display-name>ABP News</display-name>
@@ -504,6 +765,24 @@
     <desc lang="en">FITE 24/7 is here and it's running all day, every day! It's all fighting, all the time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <channel id="distro.3117">
+    <display-name>TNA Wrestling Channel</display-name>
+    <icon src="https://a.jsrdn.com/hls/23045/tna-wrestling-channel/logo_20241121_200825_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3117">
+    <title lang="en">TNA Wrestling Channel</title>
+    <desc lang="en">TNA Wrestling puts the spotlight on 20+ years of professional wrestling action, featuring addictive storylines, awe-inspiring athleticism and larger-than-life personalities. Relive all-time classics, modern masterpieces, plus original series.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.3118">
+    <display-name>Fight Network</display-name>
+    <icon src="https://a.jsrdn.com/hls/23046/fight-network/logo_20231219_201512_66.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3118">
+    <title lang="en">Fight Network</title>
+    <desc lang="en">The world’s premier 24/7 combat sports linear network’s digital stream dedicated to coverage of combat sports. Fight Network delivers a combination of Original Content, classic fights and compilations from around the word as well as weekly series from wrestling, boxing, MMA and more.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <channel id="distro.3120">
     <display-name>Africanews</display-name>
     <icon src="https://a.jsrdn.com/hls/22886/africanews/logo_20231218_175639_70.png" />
@@ -512,6 +791,24 @@
     <title lang="african">Africanews</title>
     <desc lang="african">Africanews is the only multilingual media outlet covering the latest news and curating compelling stories across the continent from a pan-African perspective. Impartial and independent, Africanews delivers national, regional and international news, and creates a bridge between audiences across the continent and the diaspora.</desc>
     <category lang="en">News</category>
+  </programme>
+  <channel id="distro.3125">
+    <display-name>beIN SPORTS Xtra</display-name>
+    <icon src="https://a.jsrdn.com/hls/23038/bein-sports-xtra/logo_20231219_184505_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3125">
+    <title lang="en">beIN SPORTS Xtra</title>
+    <desc lang="en">A free, 24/7 English language LIVE sports, news, analysis and highlights network that brings everyone closer to the game.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.3126">
+    <display-name>beIN SPORTS Xtra en Español</display-name>
+    <icon src="https://a.jsrdn.com/hls/23038/bein-sports-xtra-en-espanol/logo_20231219_184521_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3126">
+    <title lang="es">beIN SPORTS Xtra en Español</title>
+    <desc lang="es">El canal gratuito de deportes en vivo, noticias, análisis y destacados, 24 horas del día, 7 días de la semana.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <channel id="distro.3132">
     <display-name>Pitaara TV</display-name>
@@ -531,14 +828,23 @@
     <desc lang="en">An Epic Collection of Pop culture animation with never before seen originals for viewers of all ages, gamers and everyone!</desc>
     <category lang="en">Entertainment</category>
   </programme>
-  <channel id="distro.3166">
+  <channel id="distro.3162">
     <display-name>FUEL TV</display-name>
-    <icon src="https://a.jsrdn.com/hls/23055/fuel-tv-ww/logo_20231219_202054_68.png" />
+    <icon src="https://a.jsrdn.com/hls/23055/fuel-tv/logo_20231219_202037_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3166">
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3162">
     <title lang="en">FUEL TV</title>
     <desc lang="en">FUEL TV is the only channel dedicated 24/7 to the core action sports of Skateboarding, Surfing, BMX, Snow, Mountain Bike, Wakeboard and all the lifestyle that surrounds them, where Music, Art and Fashion play a decisive role.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.3164">
+    <display-name>Nolly Africa HD</display-name>
+    <icon src="https://a.jsrdn.com/hls/23057/nolly-africa-hd/logo_20231219_220408_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3164">
+    <title lang="african">Nolly Africa HD</title>
+    <desc lang="african">Nolly Africa HD is a 24-hour premium Nollywood channel, showing carefully curated English language Nollywood movies, series, talk shows, reality productions and all things Nollywood.</desc>
+    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.3187">
     <display-name>Gusto TV</display-name>
@@ -575,6 +881,33 @@
     <title lang="en">KOZOOM TV</title>
     <desc lang="en">Billiards is one of the most played game in the world. Kozoom TV offers free 24/7 billiards programming. You can watch tournaments from around the world, as well as original programming. For amateurs, it is easy to see your favorite players from all over the world compete on the biggest billiards stage! Kozoom TV is broadcasting all kind of billiards matches such as French Billiards, Carom Billiards, or Pool Billiards. Kozoom TV is made by Billiards Professional who live this Sport. But Kozoom TV is not only the biggest competitions, it is also learning how to play billiards with Masterclass videos and great matches of Carom and Pool commented by top players. Kozoom.com is the first European channel dedicated to billiard fans and offers the most complete experience to billiard lovers. Since 1998, Kozoom has been involved in the promotion of billiards, and now Kozoom TV brings you Billiards at home.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.3198">
+    <display-name>EstrellaTV</display-name>
+    <icon src="https://a.jsrdn.com/hls/23065/estrella-tv/logo_20231219_201258_66.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3198">
+    <title lang="es">Estrella TV</title>
+    <desc lang="es">EstrellaTV es un canal en español líder en noticias y entretenimiento con una gran variedad de programación que abarca de noticias y juegos, a reality, competencias de talento y “talkshows”. ¡Una experiencia que no se pueden perder! EstrellaTV is a leading Spanish-language news and entertainment channel with a wide variety of programming ranging from news to game shows, reality shows, talent competitions, and late-night talk shows. A must-see experience!</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.3199">
+    <display-name>Estrella News</display-name>
+    <icon src="https://a.jsrdn.com/hls/23065/estrella-news/logo_20231219_201240_62.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3199">
+    <title lang="es">Estrella News</title>
+    <desc lang="es">Estrella News es el único canal de noticias digital 24/7 en español que ofrece las noticias más relevantes para la comunidad hispana. La cobertura incluye noticias locales, nacionales, de entretenimiento y deportes del mejor equipo periodístico.  Estrella News is the only 24/7 Spanish-language digital news channel, delivering the most relevant and breaking news stories and reports for Hispanics. Coverage includes local, national, entertainment and sports from the best journalists and team.</desc>
+    <category lang="en">News</category>
+  </programme>
+  <channel id="distro.3200">
+    <display-name>Estrella Games</display-name>
+    <icon src="https://a.jsrdn.com/hls/23065/estrella-games/logo_20231219_201220_62.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3200">
+    <title lang="es">Estrella Games</title>
+    <desc lang="es">Estrella Games es el primer canal de concursos en español 24/7, que presenta miles de títulos populares, originales, y de competencia como Cien Latinos Dijeron, Jugando con Platanito y Retofamosos The first-ever 24/7 Spanish-language game show channel . Estrella Games feature thousands of popular original, classic and competition titles like Jugando con Palatino,  Cien Latinos Dijeron, La Mascara del Amor, Retofamosos and more.</desc>
+    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.3239">
     <display-name>Balle Balle</display-name>
@@ -756,6 +1089,15 @@
     <desc lang="asian">BritAsiaTV features the very best in Asian music, both UK based and overseas music. Being a diverse channel with a main focus of Bhangra, Punjabi Pop and Bollywood, BritAsiaTV also offers viewers R&amp;B, Urban music, Hip Hop and Underground music.</desc>
     <category lang="en">Entertainment</category>
   </programme>
+  <channel id="distro.3643">
+    <display-name>Jewish Life Television JLTV</display-name>
+    <icon src="https://a.jsrdn.com/hls/23114/jewish-life-television-jltv/logo_20231219_214334_56.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3643">
+    <title lang="en">Jewish Life Television JLTV</title>
+    <desc lang="en">Jewish Life Television is the nation's largest, most robust Jewish-themed television network. More cultural than religious, JLTV offers entertaining, high-quality programming appealing to viewers of all faiths interested in the history, lifestyle and experience of the Jewish people in the United States, in Israel and around the World.</desc>
+    <category lang="en">Lifestyle</category>
+  </programme>
   <channel id="distro.4104">
     <display-name>News9Live</display-name>
     <icon src="https://a.jsrdn.com/hls/23129/news9live/logo_20250813_011629_68.jpg" />
@@ -810,15 +1152,6 @@
     <desc lang="asian">TV9 Marathi is a responsible news brand which has been consistently delivering news in its purest form. TV9 Marathi became the most preferred Marathi news channel in Maharashtra in 2022. It is the No. 1 channel across both the urban and rural Maharashtra/ Goa markets. With a reach of more than 23 million viewers, it also generates more than 38 million impressions per week. TV9 Marathi is the fastest in providing news to viewers and is driven by the renewed philosophy of “Kalji Tumchi Hith Maharashtrache" (Viewers’ concerns and in the interest of Maharashtra). TV9 Marathi stands for fearless and bold journalism. The channel is led by experienced journalist Mr. Umesh Kumawat, known for his aggressive and fearless style.</desc>
     <category lang="en">News</category>
   </programme>
-  <channel id="distro.4110">
-    <display-name>TV9 Telugu</display-name>
-    <icon src="https://a.jsrdn.com/hls/23129/tv9-telugu/logo_20231219_225400_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4110">
-    <title lang="asian">TV9 Telugu</title>
-    <desc lang="asian">TV9 entered the Telugu electronic media space in 2004, during its nascent stage. Since that time, TV9’s slogan, “Towards Better Society”, has been not just a mere tagline but the guiding philosophy and driving policy of TV9 Telugu. TV9 has consistently portrayed news as news and has become synonymous with unbiased news and courageous investigative journalism. On behalf of the people, TV9 has unravelled several bribery cases through its powerful sting operations. Over the years, TV9 has stood as the voice of the voiceless and for the betterment of the citizenry. Whether it is an accident, bomb blast, natural calamity, unforeseen incident, political event or a high-profile case, whether it is in India or abroad, the TV9 Telegu team is at the scene first. With its unique news presentation and credibility, TV9 Telugu has become the No.1 news channel in the twin Telugu states of Andhra Pradesh and Telangana. Rajnikanth Vellalacheruvu leads the TV9 Telugu team.</desc>
-    <category lang="en">News</category>
-  </programme>
   <channel id="distro.4500">
     <display-name>FloRacing 24/7</display-name>
     <icon src="https://a.jsrdn.com/hls/22883/floracing-247/logo_20231219_225054_24.png" />
@@ -827,6 +1160,15 @@
     <title lang="en">FloRacing 24/7</title>
     <desc lang="en">All racing, all the time on the FloRacing 24/7 channel! FloRacing is the authentic home of short-track racing – offering year-long live and on-demand races and content from the best series, events, and tracks, including all-access coverage, breaking news, podcasts, at-track &amp; series-long activations.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.4503">
+    <display-name>TV9 Telugu USA</display-name>
+    <icon src="https://a.jsrdn.com/hls/23129/tv9-telugu-usa/logo_20231219_225420_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4503">
+    <title lang="asian">TV9 Telugu USA</title>
+    <desc lang="asian">TV9 entered the Telugu electronic media space in 2004, during its nascent stage. Since that time, TV9’s slogan, “Towards Better Society”, has been not just a mere tagline but the guiding philosophy and driving policy of TV9 Telugu. TV9 has consistently portrayed news as news and has become synonymous with unbiased news and courageous investigative journalism. On behalf of the people, TV9 has unravelled several bribery cases through its powerful sting operations. Over the years, TV9 has stood as the voice of the voiceless and for the betterment of the citizenry. Whether it is an accident, bomb blast, natural calamity, unforeseen incident, political event or a high-profile case, whether it is in India or abroad, the TV9 Telegu team is at the scene first. With its unique news presentation and credibility, TV9 Telugu has become the No.1 news channel in the twin Telugu states of Andhra Pradesh and Telangana. Rajnikanth Vellalacheruvu leads the TV9 Telugu team.</desc>
+    <category lang="en">News</category>
   </programme>
   <channel id="distro.4554">
     <display-name>crema.tv</display-name>
@@ -891,6 +1233,24 @@
     <desc lang="asian">Kalyan TV has been broadcasting most of the major events in the spiritual world from across Gujarat, which have been enthusiastically cherished by the viewers as these have been fulfilling their spiritual needs. With a Gujarati channel having a strong presence in the community.</desc>
     <category lang="en">Lifestyle</category>
   </programme>
+  <channel id="distro.4914">
+    <display-name>Romance Channel</display-name>
+    <icon src="https://a.jsrdn.com/hls/23077/romance-channel/logo_20231219_221635_53.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4914">
+    <title lang="es">Romance Channel</title>
+    <desc lang="es">Romance Channel es un mundo donde cada historia de amor es única. ¿Buscas romance, drama, suspenso o comedia? ¡En nuestras películas lo encontrarás todo! Desde historias simples y conmovedoras hasta relatos complejos y cautivadores. Romance Channel – step into the world where every love story unfolds with an allure. Whether you're in the mood for romance, drama, mystery, or comedy, we've got films and TV series for everyone! From sweet tales of first love to more intricate plots.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.4918">
+    <display-name>NTD News</display-name>
+    <icon src="https://a.jsrdn.com/hls/23136/ntd-news/logo_20240104_172901_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4918">
+    <title lang="en">NTD News</title>
+    <desc lang="en">An independent global news network delivering truthful and uncensored news from the US and beyond. We cover the issues that affect you and shape our world, without the political noise. We’re famous for our thoughtful in-depth analyses and our speciality—China coverage you won't find anywhere else.</desc>
+    <category lang="en">News</category>
+  </programme>
   <channel id="distro.4924">
     <display-name>Al Arabiya</display-name>
     <icon src="https://a.jsrdn.com/hls/23137/al-arabiya/logo_20240610_195041_59.png" />
@@ -954,24 +1314,6 @@
     <desc lang="asian">Mediacorp Entertainment is the entertainment and lifestyle channel for the entire family! This is where you will find high-quality and innovative productions where stories are told through the lens of Asia. From love, action, thriller and family dramas to keep you at the edge of your seat, to food and travel programmes that bring you on a whirlwind journey of tastes and places, there’s something for everyone. Here you will also find a curated collection of Asian programmes in three languages, Chinese, English and Tamil.</desc>
     <category lang="en">Entertainment</category>
   </programme>
-  <channel id="distro.4996">
-    <display-name>Shemaroo Bollywood</display-name>
-    <icon src="https://a.jsrdn.com/hls/23141/shemaroo-bollywood/logo_20240206_185308_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4996">
-    <title lang="asian">Shemaroo Bollywood</title>
-    <desc lang="asian">Dive into Bollywood's essence with Shemaroo Bollywood! Offering movies across genres and decades, it's a one-stop destination for seamless cinematic joy. Catering to the heart of every Bollywood connoisseur, experience an unparalleled rollercoaster ride across romance, action, family drama, comedy, and thrilling horror genres. From the groovy '70s to the iconic hits of the 2000s, relive the magic of Bollywood with stars like Amitabh Bachchan, Ranbir Kapoor, and more</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.4997">
-    <display-name>Shemaroo Filmigaane</display-name>
-    <icon src="https://a.jsrdn.com/hls/23141/shemaroo-filmigaane/logo_20240206_190035_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4997">
-    <title lang="asian">Shemaroo Filmigaane</title>
-    <desc lang="asian">Indulge your senses in the ultimate Bollywood music experience with Shemaroo Filmigaane! Specially curated playlists based on artists, themes, and events cater to every mood—from retro tunes of the '60s to blockbuster hits from the '90s and beyond. Where music meets emotion, every tune is a timeless journey. Whether you seek romance, sentiment, or laughter, Shemaroo Filmigaane is your ultimate destination where music meets emotion.</desc>
-    <category lang="en">Music</category>
-  </programme>
   <channel id="distro.5006">
     <display-name>Bollywood Masala</display-name>
     <icon src="https://a.jsrdn.com/hls/23142/bollywood-masala/logo_20240213_192946_70.png" />
@@ -999,13 +1341,13 @@
     <desc lang="asian">Saga Music is a 24/7 channel dedicated to serving Punjabi music content globally, showcasing a diverse array of genres including Folk, Pop, Sufi, Hip Hop, and Rap.</desc>
     <category lang="en">Music</category>
   </programme>
-  <channel id="distro.5058">
-    <display-name>Smurf TV</display-name>
-    <icon src="https://a.jsrdn.com/hls/22882/smurf-tv/logo_20240322_194411_70.png" />
+  <channel id="distro.5059">
+    <display-name>Pitufo TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/22882/pitufo-tv/logo_20240322_195115_70.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5058">
-    <title lang="es">Smurf TV</title>
-    <desc lang="es">Welcome to SMURF TV, the first and only channel 100% dedicated to the Smurfs. Discover or rediscover your favorite episodes with your iconic little blue friends.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5059">
+    <title lang="es">Pitufo TV</title>
+    <desc lang="es">Te damos la bienvenida a «PITUFO TV», el primer y único canal dedicado a los Pitufos. Aquí puedes ver o redescubrir tus episodios favoritos de tus pequeños y famosos amigos azules.</desc>
     <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5143">
@@ -1017,11 +1359,20 @@
     <desc lang="en">Explore the world from the comfort of your living room with DroneTV.  DroneTV features high quality drone video programming from all over the world, including the most sought-after travel destinations.  The channel draws from the best videos uploaded to the AirVuz drone video sharing community.</desc>
     <category lang="en">Travel</category>
   </programme>
-  <channel id="distro.5154">
-    <display-name>PLL Network</display-name>
-    <icon src="https://a.jsrdn.com/hls/22964/pll-network-ww/logo_20240626_232614_70.png" />
+  <channel id="distro.5151">
+    <display-name>Global Punjab TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/22994/global-punjab-tv/logo_20240604_233922_70.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5154">
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5151">
+    <title lang="asian">Global Punjab TV</title>
+    <desc lang="asian">Global Punjab TV is a premium quality 24X7 HD Punjabi television channel with a programming focus on quality news ,current affairs , politics , religion , culture , entertainment , business ,  humour and education about Punjab and the Punjabi community worldwide. Global Punjab TV is unmatched in its presentation of live community events in USA, Canada and India, thus making it the fastest growing and most sought after Punjabi TV. The content is created by keeping in mind old and young viewers, men and women, modern and traditional, spiritual and trendy generations.</desc>
+    <category lang="en">News</category>
+  </programme>
+  <channel id="distro.5153">
+    <display-name>PLL Network</display-name>
+    <icon src="https://a.jsrdn.com/hls/22964/pll-network/logo_20240626_231937_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5153">
     <title lang="en">PLL Network</title>
     <desc lang="en">The PLL Network is the global destination for the best lacrosse in the world. Relive unforgettable moments from the Premier Lacrosse League, immerse yourself in features &amp; documentaries and witness legendary performances from the past. The fastest game on two feet - 24/7.</desc>
     <category lang="en">Sports</category>
@@ -1071,6 +1422,15 @@
     <desc lang="asian">India’s most trusted Hindi News channel.</desc>
     <category lang="en">News</category>
   </programme>
+  <channel id="distro.5232">
+    <display-name>Willow Sports</display-name>
+    <icon src="https://a.jsrdn.com/hls/23197/willow-sports/logo_20241003_234953_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5232">
+    <title lang="asian">Willow Sports</title>
+    <desc lang="asian">Willow Sports is the free home for cricket in North America. The best of live and on-demand action from around the world is available, from ICC World Cups to the IPL. Also, other action packed live sports that will have you on the edge of your seat.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <channel id="distro.5235">
     <display-name>Punjabi Hits</display-name>
     <icon src="https://a.jsrdn.com/hls/23196/punjabi-hits/logo_20241010_204324_70.png" />
@@ -1097,15 +1457,6 @@
     <title lang="en">Ghost Dimension</title>
     <desc lang="en">Follow Ghost Dimension as they explore the world's most haunted locations, on a quest to seek out paranormal activity.</desc>
     <category lang="en">Documentary</category>
-  </programme>
-  <channel id="distro.5239">
-    <display-name>Nolly Africa HD</display-name>
-    <icon src="https://a.jsrdn.com/hls/23201/nolly-africa-hd-gb/logo_20241024_173516_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5239">
-    <title lang="african">Nolly Africa HD</title>
-    <desc lang="african">Nolly Africa HD is a 24-hour premium Nollywood channel, showing carefully curated English language Nollywood movies, series, talk shows, reality productions and all things Nollywood.</desc>
-    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5241">
     <display-name>Tabbar Hits</display-name>
@@ -1377,6 +1728,15 @@
     <desc lang="es">Box Gamers Team - ¡Canal comunitario de juegos que brinda entretenimiento y comparte la pasión por los videojuegos! Box Gamers Team - Gaming Community Channel that brings entertainment and shares the passion for video games!</desc>
     <category lang="en">Fun &amp; Games</category>
   </programme>
+  <channel id="distro.5279">
+    <display-name>Digo TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/23195/digo-tv/logo_20250102_231934_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5279">
+    <title lang="es">Digo TV</title>
+    <desc lang="es">Digo TV fortalece el vínculo de la diáspora latina en Estados Unidos con sus raíces, a través de contenidos multimedia, noticias y experiencias culturales. Reconectando su cultura con su vida cotidiana y acercándolos a lo mejor de ella. Digo TV strengthens the bond of the Latin diaspora in the United States with its roots, through multimedia content, news and cultural experiences. Reconnecting their culture to their daily lives and bringing them closer to the best of it.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
   <channel id="distro.5281">
     <display-name>HITS MEXICANOS</display-name>
     <icon src="https://a.jsrdn.com/hls/23195/hits-mexicanos/logo_20250109_231027_70.png" />
@@ -1402,6 +1762,33 @@
   <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5283">
     <title lang="african">Nigbati TV</title>
     <desc lang="african">Nigbati TV is a twenty-four hour entertainment channel that propagates the culture, tradition and language of the Yoruba people.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.5284">
+    <display-name>hi Drama!</display-name>
+    <icon src="https://a.jsrdn.com/hls/23205/hi-drama/logo_20250127_184605_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5284">
+    <title lang="asian">hi Drama!</title>
+    <desc lang="asian">hi Drama! brings together popular Chinese TV dramas, including classic historical dramas, urban romances, political intrigue, and suspenseful thrillers. It aims to provide a rich and diverse viewing experience for audiences of all ages.</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.5285">
+    <display-name>hi Life!</display-name>
+    <icon src="https://a.jsrdn.com/hls/23205/hi-life/logo_20250127_190513_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5285">
+    <title lang="asian">hi Life!</title>
+    <desc lang="asian">hi Life! features documentaries with strong Chinese characteristics and grand gala programs, showcasing China's cultural landscapes, historical heritage, stunning scenery, and delicious cuisine. It aims to help overseas audiences discover and understand China.</desc>
+    <category lang="en">Documentary</category>
+  </programme>
+  <channel id="distro.5286">
+    <display-name>hi Vida!</display-name>
+    <icon src="https://a.jsrdn.com/hls/23205/hi-vida/logo_20250127_192050_68.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5286">
+    <title lang="asian">hi Vida!</title>
+    <desc lang="asian">This channel offers the ultimate experience with Spanish versions of beloved Chinese classic TV programs. Its carefully curated selection highlights rich storytelling and deep cultural themes, making it accessible and enjoyable for Spanish-speaking audiences.</desc>
     <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5287">
@@ -1458,6 +1845,15 @@
     <desc lang="en">OurVinyl films live performances with both emerging and established musicians</desc>
     <category lang="en">Music</category>
   </programme>
+  <channel id="distro.5295">
+    <display-name>My Money</display-name>
+    <icon src="https://a.jsrdn.com/hls/23208/my-money/logo_20250211_204246_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5295">
+    <title lang="en">My Money</title>
+    <desc lang="en">Engaging series all things Money. From saving, spending, managing debt, entrepreneurial ventures, wealth building &amp; much more</desc>
+    <category lang="en">Finance</category>
+  </programme>
   <channel id="distro.5296">
     <display-name>Sports First TV</display-name>
     <icon src="https://a.jsrdn.com/hls/23208/sports-first-tv/logo_20250211_205731_70.png" />
@@ -1466,6 +1862,15 @@
     <title lang="en">Sports First TV</title>
     <desc lang="en">FAST moving 24/7 Sports News Network, daily breaking news about global sports, with interviews, features and highlights of the biggest sports events from over 200 sports federations. Covers sports from US and all around the world, EPL, NBA, NFL, MLB, F1, golf, tennis, cricket, etc.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.5297">
+    <display-name>Cirque du Soleil</display-name>
+    <icon src="https://a.jsrdn.com/hls/23207/cirque-du-soleil/logo_20260109_175622_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5297">
+    <title lang="en">Cirque du Soleil</title>
+    <desc lang="en">A compilation of Cirque du Soleil programs, including dozens of eye-popping live-capture performances, documentaries, master classes, Blue Man Group specials, music videos, and much more.</desc>
+    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5298">
     <display-name>ACI On The Go</display-name>
@@ -1728,6 +2133,24 @@
     <desc lang="en">POWERtube TV features racing, high-performance builds, grassroots motorsports, and classic hit series such as PINKS, Pass Time, and PINKS All Out.</desc>
     <category lang="en">Lifestyle</category>
   </programme>
+  <channel id="distro.5341">
+    <display-name>Screams TV by Trinian</display-name>
+    <icon src="https://a.jsrdn.com/hls/23064/screams-tv-by-trinian/logo_20250617_213711_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5341">
+    <title lang="en">Screams TV by Trinian</title>
+    <desc lang="en">Trinian Screams TV – where nightmares never end! Watch the scariest horror movies, from bone-chilling classics to modern-day terrors. Dare to watch?</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
+  <channel id="distro.5342">
+    <display-name>Gritos TV by Trinian</display-name>
+    <icon src="https://a.jsrdn.com/hls/23064/gritos-tv-by-trinian/logo_20250617_214111_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5342">
+    <title lang="es">Gritos TV by Trinian</title>
+    <desc lang="es">Trinian Gritos TV - ¡donde las pesadillas nunca terminan! Vea las películas de terror más espeluznantes, desde los clásicos más escalofriantes hasta los terrores de hoy en día. ¿Te atreves?</desc>
+    <category lang="en">Entertainment</category>
+  </programme>
   <channel id="distro.5343">
     <display-name>Mi Raza Canal</display-name>
     <icon src="https://a.jsrdn.com/hls/23064/mi-raza-canal/logo_20250617_214629_70.png" />
@@ -1880,24 +2303,6 @@
     <title lang="asian">ABN Andhra Jyothy</title>
     <desc lang="asian">ABN Andhra Jyothi is a 24x7 Telugu news channel delivering breaking news, live updates, political debates, and exclusive interviews. Launched in 2009 under Aamoda Broadcasting Network, it has become a trusted source for fearless journalism across Andhra Pradesh, Telangana, and beyond. With its tagline “We Report, You Decide,” the channel offers a wide mix of programming—ranging from investigative reports to entertainment and business news. Its flagship talk show Open Heart with RK is among the most watched in Telugu media. ABN also reaches millions digitally through AndhraJyothi.com, extending its legacy of bold and impactful journalism.</desc>
     <category lang="en">News</category>
-  </programme>
-  <channel id="distro.5364">
-    <display-name>Outdoor Channel</display-name>
-    <icon src="https://a.jsrdn.com/hls/23208/outdoor-channel/logo_20250911_181607_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5364">
-    <title lang="en">Outdoor Channel</title>
-    <desc lang="en">At Outdoor Channel, we connect our viewers to the great outdoors. Our best-in-class programming provides excitement, insight, expertise, and pure inspiration to our loyal viewers. We invite you to #FindYourAdventure on Outdoor Channel.</desc>
-    <category lang="en">Lifestyle</category>
-  </programme>
-  <channel id="distro.5365">
-    <display-name>WFN: World Fishing Network</display-name>
-    <icon src="https://a.jsrdn.com/hls/23208/wfn-world-fishing-network/logo_20250911_182344_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5365">
-    <title lang="en">WFN: World Fishing Network</title>
-    <desc lang="en">WFN: World Fishing Network is the only 24/7 TV channel devoted to fishing. Programming covers instruction, tips, tournaments, travel, outdoor lifestyle &amp; more.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <channel id="distro.5367">
     <display-name>Sana Tv</display-name>
@@ -2087,6 +2492,15 @@
     <title lang="en">Pickleball Now</title>
     <desc lang="en">Your global home for Pickleball! Watch live tournaments, on-demand replays, player interviews, short-form highlights, tactics, and behind-the-scenes access from the world’s fastest-growing sport. Every rally, every emotion, every story — Pickleball Now brings it all together.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.5388">
+    <display-name>PTC Punjabi Canada</display-name>
+    <icon src="https://a.jsrdn.com/hls/23215/ptc-punjabi-canada/logo_20260113_224655_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5388">
+    <title lang="asian">PTC Punjabi Canada</title>
+    <desc lang="asian">PTC Punjab, the oldest and most premium Punjabi channel, has long been a trusted window into Punjab’s heart and soul. Through entertainment, news, Gurbani, music, and cultural programming, it proudly celebrates Punjabi heritage and connects audiences worldwide to their roots.</desc>
+    <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5389">
     <display-name>Amar Ujala</display-name>
@@ -2358,49 +2772,58 @@
     <desc lang="en">THE RING TV is a combat sports channel featuring events across wrestling, boxing and MMA. From explosive matches to behind-the-scenes content and interviews, it delivers an immersive experience for fight fans worldwide.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <channel id="distro.1195">
-    <display-name>24 Hour Free Movies</display-name>
-    <icon src="https://a.jsrdn.com/hls/22907/24-hour-free-movies/logo_20231219_183702_63.png" />
+  <channel id="distro.5459">
+    <display-name>TyC Sports FAN</display-name>
+    <icon src="https://a.jsrdn.com/hls/23064/tyc-sports-fan/logo_20260324_020328_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1195">
-    <title lang="en">24 Hour Free Movies</title>
-    <desc lang="en">24 Hour Free Movies brings you a growing collection of popular movies and TV shows from around the world. Always Free . . . Always Fun.</desc>
-    <category lang="en">Entertainment</category>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5459">
+    <title lang="en">TyC Sports FAN</title>
+    <desc lang="en">A premium football channel dedicated to Argentine soccer, featuring matches, highlights and exclusive programming. From legendary clubs to rising stars, TyC Sports FAN delivers an authentic and high-energy football experience that connects fans worldwide to the passion of Argentine football.</desc>
+    <category lang="en">Sports</category>
   </programme>
-  <channel id="distro.1686">
-    <display-name>NOST - The Nostalgia Network</display-name>
-    <icon src="https://a.jsrdn.com/hls/22956/nost-the-nostalgia-network/logo_20231219_220428_70.png" />
+  <channel id="distro.3166">
+    <display-name>FUEL TV</display-name>
+    <icon src="https://a.jsrdn.com/hls/23055/fuel-tv-ww/logo_20231219_202054_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1686">
-    <title lang="en">NOST - The Nostalgia Network</title>
-    <desc lang="en">Classic movies and legendary stars from the Golden age of Hollywood.</desc>
-    <category lang="en">Entertainment</category>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3166">
+    <title lang="en">FUEL TV</title>
+    <desc lang="en">FUEL TV is the only channel dedicated 24/7 to the core action sports of Skateboarding, Surfing, BMX, Snow, Mountain Bike, Wakeboard and all the lifestyle that surrounds them, where Music, Art and Fashion play a decisive role.</desc>
+    <category lang="en">Sports</category>
   </programme>
-  <channel id="distro.1687">
-    <display-name>ShopLC</display-name>
-    <icon src="https://a.jsrdn.com/hls/22957/shoplc/logo_20231219_221828_30.png" />
+  <channel id="distro.4110">
+    <display-name>TV9 Telugu</display-name>
+    <icon src="https://a.jsrdn.com/hls/23129/tv9-telugu/logo_20231219_225400_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1687">
-    <title lang="en">Shop LC</title>
-    <desc lang="en">Shop LC, the fastest growing video shopping network in America, offers you the lowest prices and greatest value guaranteed…From designer jewelry, watches, beauty products, fashionable apparel and handbags, great gift items and accessories… and so much more!! Shop LC, Delivering Joy 24/7/365!</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4110">
+    <title lang="asian">TV9 Telugu</title>
+    <desc lang="asian">TV9 entered the Telugu electronic media space in 2004, during its nascent stage. Since that time, TV9’s slogan, “Towards Better Society”, has been not just a mere tagline but the guiding philosophy and driving policy of TV9 Telugu. TV9 has consistently portrayed news as news and has become synonymous with unbiased news and courageous investigative journalism. On behalf of the people, TV9 has unravelled several bribery cases through its powerful sting operations. Over the years, TV9 has stood as the voice of the voiceless and for the betterment of the citizenry. Whether it is an accident, bomb blast, natural calamity, unforeseen incident, political event or a high-profile case, whether it is in India or abroad, the TV9 Telegu team is at the scene first. With its unique news presentation and credibility, TV9 Telugu has become the No.1 news channel in the twin Telugu states of Andhra Pradesh and Telangana. Rajnikanth Vellalacheruvu leads the TV9 Telugu team.</desc>
+    <category lang="en">News</category>
+  </programme>
+  <channel id="distro.5154">
+    <display-name>PLL Network</display-name>
+    <icon src="https://a.jsrdn.com/hls/22964/pll-network-ww/logo_20240626_232614_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5154">
+    <title lang="en">PLL Network</title>
+    <desc lang="en">The PLL Network is the global destination for the best lacrosse in the world. Relive unforgettable moments from the Premier Lacrosse League, immerse yourself in features &amp; documentaries and witness legendary performances from the past. The fastest game on two feet - 24/7.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <channel id="distro.5364">
+    <display-name>Outdoor Channel</display-name>
+    <icon src="https://a.jsrdn.com/hls/23208/outdoor-channel/logo_20250911_181607_70.png" />
+  </channel>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5364">
+    <title lang="en">Outdoor Channel</title>
+    <desc lang="en">At Outdoor Channel, we connect our viewers to the great outdoors. Our best-in-class programming provides excitement, insight, expertise, and pure inspiration to our loyal viewers. We invite you to #FindYourAdventure on Outdoor Channel.</desc>
     <category lang="en">Lifestyle</category>
   </programme>
-  <channel id="distro.2653">
-    <display-name>AfroLandTV</display-name>
-    <icon src="https://a.jsrdn.com/hls/23000/afrolandtv/logo_20231219_184044_45.png" />
+  <channel id="distro.5365">
+    <display-name>WFN: World Fishing Network</display-name>
+    <icon src="https://a.jsrdn.com/hls/23208/wfn-world-fishing-network/logo_20250911_182344_70.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2653">
-    <title lang="african">AfroLandTV</title>
-    <desc lang="african">Watch hundreds of free African movies, Nollywood, and TV shows from Africa and its diaspora!</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.2842">
-    <display-name>Swerve Combat</display-name>
-    <icon src="https://a.jsrdn.com/hls/23018/swerve-combat/logo_20231219_222813_26.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.2842">
-    <title lang="en">Swerve Combat</title>
-    <desc lang="en">Swerve Combat delivers non-stop action with boxing, MMA, wrestling, and strength competitions along with gripping stories about the world’s most inspirational athletes.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5365">
+    <title lang="en">WFN: World Fishing Network</title>
+    <desc lang="en">WFN: World Fishing Network is the only 24/7 TV channel devoted to fishing. Programming covers instruction, tips, tournaments, travel, outdoor lifestyle &amp; more.</desc>
     <category lang="en">Sports</category>
   </programme>
   <channel id="distro.2959">
@@ -2412,148 +2835,40 @@
     <desc lang="en">JOURNY is the only channel at the intersection of travel, art, and culture! Watch curated content focused on immersive experiences and unique storytelling.</desc>
     <category lang="en">Travel</category>
   </programme>
-  <channel id="distro.3125">
-    <display-name>beIN SPORTS Xtra</display-name>
-    <icon src="https://a.jsrdn.com/hls/23038/bein-sports-xtra/logo_20231219_184505_68.png" />
+  <channel id="distro.4996">
+    <display-name>Shemaroo Bollywood</display-name>
+    <icon src="https://a.jsrdn.com/hls/23141/shemaroo-bollywood/logo_20240206_185308_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3125">
-    <title lang="en">beIN SPORTS Xtra</title>
-    <desc lang="en">A free, 24/7 English language LIVE sports, news, analysis and highlights network that brings everyone closer to the game.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <channel id="distro.3126">
-    <display-name>beIN SPORTS Xtra en Español</display-name>
-    <icon src="https://a.jsrdn.com/hls/23038/bein-sports-xtra-en-espanol/logo_20231219_184521_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3126">
-    <title lang="es">beIN SPORTS Xtra en Español</title>
-    <desc lang="es">El canal gratuito de deportes en vivo, noticias, análisis y destacados, 24 horas del día, 7 días de la semana.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <channel id="distro.3162">
-    <display-name>FUEL TV</display-name>
-    <icon src="https://a.jsrdn.com/hls/23055/fuel-tv/logo_20231219_202037_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3162">
-    <title lang="en">FUEL TV</title>
-    <desc lang="en">FUEL TV is the only channel dedicated 24/7 to the core action sports of Skateboarding, Surfing, BMX, Snow, Mountain Bike, Wakeboard and all the lifestyle that surrounds them, where Music, Art and Fashion play a decisive role.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <channel id="distro.3164">
-    <display-name>Nolly Africa HD</display-name>
-    <icon src="https://a.jsrdn.com/hls/23057/nolly-africa-hd/logo_20231219_220408_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3164">
-    <title lang="african">Nolly Africa HD</title>
-    <desc lang="african">Nolly Africa HD is a 24-hour premium Nollywood channel, showing carefully curated English language Nollywood movies, series, talk shows, reality productions and all things Nollywood.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4996">
+    <title lang="asian">Shemaroo Bollywood</title>
+    <desc lang="asian">Dive into Bollywood's essence with Shemaroo Bollywood! Offering movies across genres and decades, it's a one-stop destination for seamless cinematic joy. Catering to the heart of every Bollywood connoisseur, experience an unparalleled rollercoaster ride across romance, action, family drama, comedy, and thrilling horror genres. From the groovy '70s to the iconic hits of the 2000s, relive the magic of Bollywood with stars like Amitabh Bachchan, Ranbir Kapoor, and more</desc>
     <category lang="en">Entertainment</category>
   </programme>
-  <channel id="distro.3643">
-    <display-name>Jewish Life Television JLTV</display-name>
-    <icon src="https://a.jsrdn.com/hls/23114/jewish-life-television-jltv/logo_20231219_214334_56.png" />
+  <channel id="distro.4997">
+    <display-name>Shemaroo Filmigaane</display-name>
+    <icon src="https://a.jsrdn.com/hls/23141/shemaroo-filmigaane/logo_20240206_190035_68.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.3643">
-    <title lang="en">Jewish Life Television JLTV</title>
-    <desc lang="en">Jewish Life Television is the nation's largest, most robust Jewish-themed television network. More cultural than religious, JLTV offers entertaining, high-quality programming appealing to viewers of all faiths interested in the history, lifestyle and experience of the Jewish people in the United States, in Israel and around the World.</desc>
-    <category lang="en">Lifestyle</category>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4997">
+    <title lang="asian">Shemaroo Filmigaane</title>
+    <desc lang="asian">Indulge your senses in the ultimate Bollywood music experience with Shemaroo Filmigaane! Specially curated playlists based on artists, themes, and events cater to every mood—from retro tunes of the '60s to blockbuster hits from the '90s and beyond. Where music meets emotion, every tune is a timeless journey. Whether you seek romance, sentiment, or laughter, Shemaroo Filmigaane is your ultimate destination where music meets emotion.</desc>
+    <category lang="en">Music</category>
   </programme>
-  <channel id="distro.5059">
-    <display-name>Pitufo TV</display-name>
-    <icon src="https://a.jsrdn.com/hls/22882/pitufo-tv/logo_20240322_195115_70.png" />
+  <channel id="distro.1755">
+    <display-name>Times Now News</display-name>
+    <icon src="https://a.jsrdn.com/hls/22979/times-now-news/logo_20231219_223209_62.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5059">
-    <title lang="es">Pitufo TV</title>
-    <desc lang="es">Te damos la bienvenida a «PITUFO TV», el primer y único canal dedicado a los Pitufos. Aquí puedes ver o redescubrir tus episodios favoritos de tus pequeños y famosos amigos azules.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.5151">
-    <display-name>Global Punjab TV</display-name>
-    <icon src="https://a.jsrdn.com/hls/22994/global-punjab-tv/logo_20240604_233922_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5151">
-    <title lang="asian">Global Punjab TV</title>
-    <desc lang="asian">Global Punjab TV is a premium quality 24X7 HD Punjabi television channel with a programming focus on quality news ,current affairs , politics , religion , culture , entertainment , business ,  humour and education about Punjab and the Punjabi community worldwide. Global Punjab TV is unmatched in its presentation of live community events in USA, Canada and India, thus making it the fastest growing and most sought after Punjabi TV. The content is created by keeping in mind old and young viewers, men and women, modern and traditional, spiritual and trendy generations.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1755">
+    <title lang="asian">Times Now News</title>
+    <desc lang="asian">Times Now with its credo Now or Nothing takes the centre stage of influencing the influencer, by delivering the most compelling and irreplaceable content to the viewers. Times Now is India’s no. 1 and most viewed English current affairs news channel for over 15 years, in over 100+ countries.</desc>
     <category lang="en">News</category>
   </programme>
-  <channel id="distro.5153">
-    <display-name>PLL Network</display-name>
-    <icon src="https://a.jsrdn.com/hls/22964/pll-network/logo_20240626_231937_70.png" />
+  <channel id="distro.1809">
+    <display-name>Zoom</display-name>
+    <icon src="https://a.jsrdn.com/hls/22979/zoom-tv/logo_20231219_224525_56.png" />
   </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5153">
-    <title lang="en">PLL Network</title>
-    <desc lang="en">The PLL Network is the global destination for the best lacrosse in the world. Relive unforgettable moments from the Premier Lacrosse League, immerse yourself in features &amp; documentaries and witness legendary performances from the past. The fastest game on two feet - 24/7.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <channel id="distro.5232">
-    <display-name>Willow Sports</display-name>
-    <icon src="https://a.jsrdn.com/hls/23197/willow-sports/logo_20241003_234953_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5232">
-    <title lang="asian">Willow Sports</title>
-    <desc lang="asian">Willow Sports is the free home for cricket in North America. The best of live and on-demand action from around the world is available, from ICC World Cups to the IPL. Also, other action packed live sports that will have you on the edge of your seat.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <channel id="distro.5284">
-    <display-name>hi Drama!</display-name>
-    <icon src="https://a.jsrdn.com/hls/23205/hi-drama/logo_20250127_184605_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5284">
-    <title lang="asian">hi Drama!</title>
-    <desc lang="asian">hi Drama! brings together popular Chinese TV dramas, including classic historical dramas, urban romances, political intrigue, and suspenseful thrillers. It aims to provide a rich and diverse viewing experience for audiences of all ages.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.5285">
-    <display-name>hi Life!</display-name>
-    <icon src="https://a.jsrdn.com/hls/23205/hi-life/logo_20250127_190513_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5285">
-    <title lang="asian">hi Life!</title>
-    <desc lang="asian">hi Life! features documentaries with strong Chinese characteristics and grand gala programs, showcasing China's cultural landscapes, historical heritage, stunning scenery, and delicious cuisine. It aims to help overseas audiences discover and understand China.</desc>
-    <category lang="en">Documentary</category>
-  </programme>
-  <channel id="distro.5286">
-    <display-name>hi Vida!</display-name>
-    <icon src="https://a.jsrdn.com/hls/23205/hi-vida/logo_20250127_192050_68.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5286">
-    <title lang="asian">hi Vida!</title>
-    <desc lang="asian">This channel offers the ultimate experience with Spanish versions of beloved Chinese classic TV programs. Its carefully curated selection highlights rich storytelling and deep cultural themes, making it accessible and enjoyable for Spanish-speaking audiences.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.5295">
-    <display-name>My Money</display-name>
-    <icon src="https://a.jsrdn.com/hls/23208/my-money/logo_20250211_204246_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5295">
-    <title lang="en">My Money</title>
-    <desc lang="en">Engaging series all things Money. From saving, spending, managing debt, entrepreneurial ventures, wealth building &amp; much more</desc>
-    <category lang="en">Finance</category>
-  </programme>
-  <channel id="distro.5297">
-    <display-name>Cirque du Soleil</display-name>
-    <icon src="https://a.jsrdn.com/hls/23207/cirque-du-soleil/logo_20260109_175622_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5297">
-    <title lang="en">Cirque du Soleil</title>
-    <desc lang="en">A compilation of Cirque du Soleil programs, including dozens of eye-popping live-capture performances, documentaries, master classes, Blue Man Group specials, music videos, and much more.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.5388">
-    <display-name>PTC Punjabi Canada</display-name>
-    <icon src="https://a.jsrdn.com/hls/23215/ptc-punjabi-canada/logo_20260113_224655_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5388">
-    <title lang="asian">PTC Punjabi Canada</title>
-    <desc lang="asian">PTC Punjab, the oldest and most premium Punjabi channel, has long been a trusted window into Punjab’s heart and soul. Through entertainment, news, Gurbani, music, and cultural programming, it proudly celebrates Punjabi heritage and connects audiences worldwide to their roots.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.4914">
-    <display-name>Romance Channel</display-name>
-    <icon src="https://a.jsrdn.com/hls/23077/romance-channel/logo_20231219_221635_53.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.4914">
-    <title lang="es">Romance Channel</title>
-    <desc lang="es">Romance Channel es un mundo donde cada historia de amor es única. ¿Buscas romance, drama, suspenso o comedia? ¡En nuestras películas lo encontrarás todo! Desde historias simples y conmovedoras hasta relatos complejos y cautivadores. Romance Channel – step into the world where every love story unfolds with an allure. Whether you're in the mood for romance, drama, mystery, or comedy, we've got films and TV series for everyone! From sweet tales of first love to more intricate plots.</desc>
+  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.1809">
+    <title lang="asian">Zoom</title>
+    <desc lang="asian">India’s largest Bollywood Channel and young India’s newest Entertainment Channel. Zoom offers a wide variety of premium entertaining content, from original shows, Bollywood news, gossips, music, to superstar interviews, and film reviews.</desc>
     <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5300">
@@ -2563,15 +2878,6 @@
   <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5300">
     <title lang="es">CINDIE TV</title>
     <desc lang="es">Películas independientes de clase mundial, ganadoras de festivales de cine y series de televisión exclusivas premiadas, cuidadosamente seleccionadas para el público latinoamericano. World Class Independent movies, film festival winners &amp; award-winning exclusive TV series from around the world, carefully curated for the Latin American audience.</desc>
-    <category lang="en">Entertainment</category>
-  </programme>
-  <channel id="distro.5342">
-    <display-name>Gritos TV by Trinian</display-name>
-    <icon src="https://a.jsrdn.com/hls/23064/gritos-tv-by-trinian/logo_20250617_214111_70.png" />
-  </channel>
-  <programme start="20260411000000 +0000" stop="20260411040000 +0000" channel="distro.5342">
-    <title lang="es">Gritos TV by Trinian</title>
-    <desc lang="es">Trinian Gritos TV - ¡donde las pesadillas nunca terminan! Vea las películas de terror más espeluznantes, desde los clásicos más escalofriantes hasta los terrores de hoy en día. ¿Te atreves?</desc>
     <category lang="en">Entertainment</category>
   </programme>
   <channel id="distro.5460">
