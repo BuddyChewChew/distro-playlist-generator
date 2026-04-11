@@ -14,20 +14,13 @@ JSON_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv_raw.json")
 EPG_OUTPUT = os.path.join(OUTPUT_DIR, "distrotv.xml")
 M3U_ALL = os.path.join(OUTPUT_DIR, "distrotv_all.m3u")
 
-# This builds the full URL for GitHub Raw
-GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "username/repo") # Default for local testing
+GITHUB_REPO = os.getenv("GITHUB_REPOSITORY", "username/repo")
 EPG_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/playlists/distrotv.xml"
 
 GEOS = ["US", "JP", "CA", "MX"]
 
-ANDROID_UA = "Dalvik/2.1.0 (Linux; U; Android 9; AFTT Build/STT9.221129.002) GTV/AFTT DistroTV/2.0.9"
 BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-
-HLS_HEADERS = {
-    "User-Agent": BROWSER_UA,
-    "Origin": "https://distro.tv",
-    "Referer": "https://distro.tv/",
-}
+REFERER = "https://distro.tv/"
 
 FEED_BASE = "https://tv.jsrdn.com/tv_v5/getfeed.php?type=live"
 MACRO_RE = re.compile(r"__[^_].*?__")
@@ -82,112 +75,115 @@ def _sanitize_url(url: str) -> str:
         elif MACRO_RE.search(v or ""):
             v = ""
         sanitized.append((k, v))
-    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
+    base_url = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
+    return f"{base_url}|User-Agent={BROWSER_UA}&Referer={REFERER}"
 
 def fetch_and_process():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
 
     session = requests.Session()
-    session.headers.update({"User-Agent": ANDROID_UA, "Accept": "application/json,*/*"})
+    session.headers.update({"User-Agent": BROWSER_UA})
     
-    unique_channels = {} 
-    geo_playlists = {geo: [] for geo in GEOS}
-    xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
+    all_extracted_channels = {} 
+    geo_to_ids = {geo: [] for geo in GEOS}
 
     for geo in GEOS:
-        print(f"Scraping Geo: {geo}...")
+        print(f"Fetching Geo: {geo}...")
         url = f"{FEED_BASE}&geo={geo}" if geo != "US" else FEED_BASE
         try:
             r = session.get(url, timeout=30)
             r.raise_for_status()
             feed = r.json()
             
+            # Handle different JSON structures (dict vs list)
             shows_data = feed.get("shows", {})
-            shows = list(shows_data.values()) if isinstance(shows_data, dict) else shows_data
+            if isinstance(shows_data, dict):
+                shows = list(shows_data.values())
+            elif isinstance(shows_data, list):
+                shows = shows_data
+            else:
+                shows = []
 
             for show in shows:
-                if not isinstance(show, dict) or show.get("type") != "live":
-                    continue
+                if not isinstance(show, dict): continue
                 
-                show_id = str(show.get('id'))
-                name = (show.get("title") or "").strip()
-                logo = show.get("img_logo") or ""
-                category, lang = _parse_distro_tags(show.get("genre") or "")
+                # Check for live stream content
+                seasons = show.get("seasons", [])
+                if not seasons or not isinstance(seasons[0], dict): continue
+                episodes = seasons[0].get("episodes", [])
+                if not episodes or not isinstance(episodes[0], dict): continue
                 
-                seasons = show.get("seasons") or []
-                if not seasons or not seasons[0].get("episodes"):
-                    continue
-                
-                ep = seasons[0]["episodes"][0]
+                ep = episodes[0]
                 raw_url = ep.get("content", {}).get("url")
                 if not raw_url: continue
-                
-                stream_url = _sanitize_url(raw_url)
-                tvg_id = f"distro.{show_id}"
-                group = f"DistroTV • {category}"
 
-                entry = {
-                    "id": tvg_id,
-                    "name": name,
-                    "logo": logo,
-                    "group": group,
-                    "url": stream_url,
-                    "lang": lang,
-                    "desc": show.get("description", ""),
-                    "prog_title": ep.get("title", name)
-                }
+                show_id = str(show.get('id', ''))
+                if not show_id: continue
 
-                geo_playlists[geo].append(entry)
+                # Store for geo-specific playlist
+                geo_to_ids[geo].append(show_id)
 
-                if show_id not in unique_channels:
-                    unique_channels[show_id] = entry
+                # Store unique channel info if not already captured
+                if show_id not in all_extracted_channels:
+                    name = (show.get("title") or "Unknown Channel").strip()
+                    logo = show.get("img_logo") or ""
+                    category, lang = _parse_distro_tags(show.get("genre") or "")
                     
-                    chan_el = ET.SubElement(xml_root, "channel", id=tvg_id)
-                    ET.SubElement(chan_el, "display-name").text = name
-                    ET.SubElement(chan_el, "icon", src=logo)
-
-                    start_time = datetime.now().strftime("%Y%m%d%H0000 +0000")
-                    stop_time = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
-                    
-                    prog_el = ET.SubElement(xml_root, "programme", {
-                        "start": start_time,
-                        "stop": stop_time,
-                        "channel": tvg_id
-                    })
-                    ET.SubElement(prog_el, "title", lang=lang).text = entry["prog_title"]
-                    ET.SubElement(prog_el, "desc", lang=lang).text = entry["desc"]
-                    ET.SubElement(prog_el, "category", lang="en").text = category
+                    all_extracted_channels[show_id] = {
+                        "id": f"distro.{show_id}",
+                        "name": name,
+                        "logo": logo,
+                        "category": category,
+                        "url": _sanitize_url(raw_url),
+                        "lang": lang,
+                        "desc": show.get("description", ""),
+                        "prog_title": ep.get("title", name)
+                    }
 
         except Exception as e:
-            print(f"Error for {geo}: {e}")
+            print(f"Error fetching {geo}: {e}")
 
-    # Header with full URL
-    m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
+    # --- GENERATE FILES ---
+    
+    # 1. XMLTV EPG
+    xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
+    for sid, c in all_extracted_channels.items():
+        chan_el = ET.SubElement(xml_root, "channel", id=c["id"])
+        ET.SubElement(chan_el, "display-name").text = c["name"]
+        ET.SubElement(chan_el, "icon", src=c["logo"])
 
-    # Write Master Playlist
-    with open(M3U_ALL, "w", encoding="utf-8") as f:
-        f.write(m3u_header)
-        for c in unique_channels.values():
-            f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]}",{c["name"]}\n')
-            f.write(f'{c["url"]}\n')
+        start_time = datetime.now().strftime("%Y%m%d%H0000 +0000")
+        stop_time = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
+        prog_el = ET.SubElement(xml_root, "programme", {"start": start_time, "stop": stop_time, "channel": c["id"]})
+        ET.SubElement(prog_el, "title", lang=c["lang"]).text = c["prog_title"]
+        ET.SubElement(prog_el, "desc", lang=c["lang"]).text = c["desc"]
+        ET.SubElement(prog_el, "category", lang="en").text = c["category"]
 
-    # Write Regional Playlists
-    for geo, channels in geo_playlists.items():
-        geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
-        with open(geo_file, "w", encoding="utf-8") as f:
-            f.write(m3u_header)
-            for c in channels:
-                f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["group"]} [{geo}]",{c["name"]}\n')
-                f.write(f'{c["url"]}\n')
-
-    # Write EPG XML
     tree = ET.ElementTree(xml_root)
     ET.indent(tree, space="  ", level=0)
     tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
 
-    with open(JSON_OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(list(unique_channels.values()), f, indent=2, ensure_ascii=False)
+    # 2. Master M3U (All Unique Channels)
+    m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
+    with open(M3U_ALL, "w", encoding="utf-8") as f:
+        f.write(m3u_header)
+        for c in all_extracted_channels.values():
+            f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {c["category"]}",{c["name"]}\n')
+            f.write(f'{c["url"]}\n')
+
+    # 3. Regional M3Us
+    for geo, ids in geo_to_ids.items():
+        if not ids: continue
+        geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
+        with open(geo_file, "w", encoding="utf-8") as f:
+            f.write(m3u_header)
+            for sid in ids:
+                c = all_extracted_channels[sid]
+                f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {geo} • {c["category"]}",{c["name"]}\n')
+                f.write(f'{c["url"]}\n')
+
+    print(f"Success! Found {len(all_extracted_channels)} total unique channels.")
 
 if __name__ == "__main__":
     fetch_and_process()
