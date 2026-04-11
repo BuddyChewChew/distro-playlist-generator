@@ -25,6 +25,7 @@ REFERER = "https://distro.tv/"
 FEED_BASE = "https://tv.jsrdn.com/tv_v5/getfeed.php?type=live"
 MACRO_RE = re.compile(r"__[^_].*?__")
 
+# These must match exactly what Cloudfront/Newsmax expects
 MACRO_REPLACEMENTS = {
     "__CACHE_BUSTER__":         lambda: str(int(time.time() * 1000)),
     "__DEVICE_ID__":            lambda: str(uuid.uuid4()),
@@ -35,6 +36,7 @@ MACRO_REPLACEMENTS = {
     "__PAGEURL_ESC__":          lambda: "https%3A%2F%2Fdistro.tv%2F",
     "__STORE_URL__":            lambda: "https%3A%2F%2Fdistro.tv%2F",
     "__APP_BUNDLE__":           lambda: "distro.tv",
+    "__APP_VERSION__":          lambda: "0",
     "__WIDTH__":                lambda: "1920",
     "__HEIGHT__":               lambda: "1080",
     "__DEVICE__":               lambda: "Linux",
@@ -72,11 +74,14 @@ def _sanitize_url(url: str) -> str:
     for k, v in q:
         if v in MACRO_REPLACEMENTS:
             v = MACRO_REPLACEMENTS[v]()
-        elif MACRO_RE.search(v or ""):
-            v = ""
+        elif v and MACRO_RE.search(v):
+            v = "" # Clear unknown macros
         sanitized.append((k, v))
-    base_url = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
-    return f"{base_url}|User-Agent={BROWSER_UA}&Referer={REFERER}"
+    
+    # Rebuild URL with filled macros
+    clean_url = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(sanitized, doseq=True), ""))
+    # Append User-Agent and Referer for the IPTV Player
+    return f"{clean_url}|User-Agent={BROWSER_UA}&Referer={REFERER}"
 
 def fetch_and_process():
     if not os.path.exists(OUTPUT_DIR):
@@ -89,7 +94,6 @@ def fetch_and_process():
     geo_to_ids = {geo: [] for geo in GEOS}
 
     for geo in GEOS:
-        print(f"Fetching Geo: {geo}...")
         url = f"{FEED_BASE}&geo={geo}" if geo != "US" else FEED_BASE
         try:
             r = session.get(url, timeout=30)
@@ -97,42 +101,20 @@ def fetch_and_process():
             feed = r.json()
             
             shows_data = feed.get("shows", {})
-            if isinstance(shows_data, dict):
-                shows = list(shows_data.values())
-            elif isinstance(shows_data, list):
-                shows = shows_data
-            else:
-                shows = []
+            shows = list(shows_data.values()) if isinstance(shows_data, dict) else (shows_data if isinstance(shows_data, list) else [])
 
             for show in shows:
-                if not isinstance(show, dict): continue
-                
-                # --- LIVE FILTER START ---
-                # 1. Check if the show type is explicitly 'live'
-                if show.get("type") != "live":
+                if not isinstance(show, dict) or show.get("type") != "live":
                     continue
                 
                 seasons = show.get("seasons", [])
-                if not seasons or not isinstance(seasons[0], dict): continue
-                episodes = seasons[0].get("episodes", [])
-                if not episodes or not isinstance(episodes[0], dict): continue
+                if not seasons or not seasons[0].get("episodes"): continue
                 
-                ep = episodes[0]
-                content = ep.get("content", {})
-                
-                # 2. Check if the episode content itself is marked as live
-                if content.get("streamtype") != "live" and content.get("islive") != "1":
-                    # Some entries might lack these but still be valid live streams
-                    # We only skip if they are explicitly marked as something else
-                    pass 
-
-                raw_url = content.get("url")
+                ep = seasons[0]["episodes"][0]
+                raw_url = ep.get("content", {}).get("url")
                 if not raw_url: continue
-                # --- LIVE FILTER END ---
 
                 show_id = str(show.get('id', ''))
-                if not show_id: continue
-
                 geo_to_ids[geo].append(show_id)
 
                 if show_id not in all_extracted_channels:
@@ -150,47 +132,40 @@ def fetch_and_process():
                         "desc": show.get("description", ""),
                         "prog_title": ep.get("title", name)
                     }
-
         except Exception as e:
-            print(f"Error fetching {geo}: {e}")
+            print(f"Error for {geo}: {e}")
 
-    # Generate XMLTV
-    xml_root = ET.Element("tv", {"generator-info-name": "DistroTV-Scraper"})
+    # Generate EPG
+    xml_root = ET.Element("tv")
     for sid, c in all_extracted_channels.items():
         chan_el = ET.SubElement(xml_root, "channel", id=c["id"])
         ET.SubElement(chan_el, "display-name").text = c["name"]
         ET.SubElement(chan_el, "icon", src=c["logo"])
-
-        start_time = datetime.now().strftime("%Y%m%d%H0000 +0000")
-        stop_time = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
-        prog_el = ET.SubElement(xml_root, "programme", {"start": start_time, "stop": stop_time, "channel": c["id"]})
-        ET.SubElement(prog_el, "title", lang=c["lang"]).text = c["prog_title"]
-        ET.SubElement(prog_el, "desc", lang=c["lang"]).text = c["desc"]
-        ET.SubElement(prog_el, "category", lang="en").text = c["category"]
+        
+        start = datetime.now().strftime("%Y%m%d%H0000 +0000")
+        stop = (datetime.now() + timedelta(hours=4)).strftime("%Y%m%d%H0000 +0000")
+        prog = ET.SubElement(xml_root, "programme", {"start": start, "stop": stop, "channel": c["id"]})
+        ET.SubElement(prog, "title").text = c["prog_title"]
+        ET.SubElement(prog, "desc").text = c["desc"]
 
     tree = ET.ElementTree(xml_root)
-    ET.indent(tree, space="  ", level=0)
     tree.write(EPG_OUTPUT, encoding="utf-8", xml_declaration=True)
 
-    # Generate Playlists
-    m3u_header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
+    # Generate M3Us
+    header = f'#EXTM3U url-tvg="{EPG_URL}"\n'
     with open(M3U_ALL, "w", encoding="utf-8") as f:
-        f.write(m3u_header)
+        f.write(header)
         for c in all_extracted_channels.values():
-            f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {c["category"]}",{c["name"]}\n')
+            f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{c["category"]}",{c["name"]}\n')
             f.write(f'{c["url"]}\n')
 
     for geo, ids in geo_to_ids.items():
-        if not ids: continue
-        geo_file = os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u")
-        with open(geo_file, "w", encoding="utf-8") as f:
-            f.write(m3u_header)
+        with open(os.path.join(OUTPUT_DIR, f"distrotv_{geo}.m3u"), "w", encoding="utf-8") as f:
+            f.write(header)
             for sid in ids:
                 c = all_extracted_channels[sid]
-                f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="DistroTV • {geo} • {c["category"]}",{c["name"]}\n')
+                f.write(f'#EXTINF:-1 tvg-id="{c["id"]}" tvg-logo="{c["logo"]}" group-title="{geo} | {c["category"]}",{c["name"]}\n')
                 f.write(f'{c["url"]}\n')
-
-    print(f"Success! Generated {len(all_extracted_channels)} live channels.")
 
 if __name__ == "__main__":
     fetch_and_process()
