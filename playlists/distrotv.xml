@@ -4,7 +4,7 @@
     <display-name>CCTV-4</display-name>
     <icon src="https://a.jsrdn.com/hls/23094/cctv-4/logo_20231219_185256_63.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.3415">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.3415">
     <title lang="asian">CCTV-4</title>
     <desc lang="asian">CCTV-4 is a channel providing programs that integrate news and culture. With the purpose of inheriting the Chinese civilization in the service of Chinese speaking people living in the rest of the world, the channel mainly serves global Chinese speaking people and foreign nationals who know the Chinese language.</desc>
   </programme>
@@ -12,7 +12,7 @@
     <display-name>CGTN</display-name>
     <icon src="https://a.jsrdn.com/hls/23094/cgtn/logo_20231219_185401_34.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.3416">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.3416">
     <title lang="en">CGTN</title>
     <desc lang="en">CGTN English is China Global Television Network’s flagship news channel, committed to providing its global audience with accurate, timely and objective news coverage. Headquartered in Beijing, it also has production centers in Nairobi, Washington D.C. and London, all staffed with international professionals from around the world.</desc>
   </programme>
@@ -20,7 +20,7 @@
     <display-name>CGTN Documentary</display-name>
     <icon src="https://a.jsrdn.com/hls/23094/cgtn-documentary/logo_20231219_185321_53.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.3417">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.3417">
     <title lang="en">CGTN Documentary</title>
     <desc lang="en">CGTN Documentary is a satellite TV channel devoted solely to documentaries, broadcast 24/7. Its programs cover latest progresses in varied industries, listed world cultural heritage, people who changed the nation, and many more. All dubbed in English, CGTN Documentary is the only screen from which you can see the real lives of the Chinese and understand their history.</desc>
   </programme>
@@ -28,7 +28,7 @@
     <display-name>CGTN Español</display-name>
     <icon src="https://a.jsrdn.com/hls/23094/cgtn-espanol/logo_20231219_185344_62.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.3418">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.3418">
     <title lang="es">CGTN Español</title>
     <desc lang="es">CGTN Español is one of CGTN´s general content channels, providing accurate、timely and objective information and rich audiovisual content to the Spanish language audience 24 hours a day. It aims to promote communication and understanding between China and the world, and enhance cultural exchanges and mutual trust between China and other countries.</desc>
   </programme>
@@ -36,7 +36,7 @@
     <display-name>CGTN Global Biz</display-name>
     <icon src="https://a.jsrdn.com/hls/23232/cgtn-global-biz/logo_20251105_004205_68.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.5375">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.5375">
     <title lang="en">CGTN Global Biz</title>
     <desc lang="en">CGTN Global Biz delivers authoritative business and tech news, high-level interviews, and in-depth features on China’s economic growth from a global viewpoint. It connects Chinese and international audiences, tracks market shifts, and highlights cutting-edge advances—offering a vital window into global trends.</desc>
   </programme>
@@ -44,7 +44,7 @@
     <display-name>China Travel</display-name>
     <icon src="https://a.jsrdn.com/hls/23232/china-travel/logo_20251105_004704_68.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.5376">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.5376">
     <title lang="en">China Travel</title>
     <desc lang="en">Explore China’s diverse culture, history, and scenic beauty—from its heartland to remote corners. Join us as we journey through this captivating country and discover the stories of its people.</desc>
   </programme>
@@ -52,7 +52,7 @@
     <display-name>Discovering China</display-name>
     <icon src="https://a.jsrdn.com/hls/23232/discovering-china/logo_20251105_005016_68.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.5377">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.5377">
     <title lang="en">Discovering China</title>
     <desc lang="en">Discovering China features high-quality programs under themes like “Vibrant China,” “Beautiful China,” and “Historical China.” It showcases modern life, innovation, history, and nature while highlighting China’s global interactions. A world of wonders awaits!</desc>
   </programme>
@@ -60,7 +60,7 @@
     <display-name>Daystar TV</display-name>
     <icon src="https://a.jsrdn.com/hls/23240/daystar-tv/logo_20251209_232020_69.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.5379">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.5379">
     <title lang="en">Daystar TV</title>
     <desc lang="en">Daystar is one of the most widely recognized Christian television networks globally, reaching millions of viewers across 200+ countries and territories. Daystar has established itself as a trusted source for inspirational content, including faith-based teachings, uplifting music, and family-friendly programming.</desc>
   </programme>
@@ -68,7 +68,7 @@
     <display-name>Daystar Español</display-name>
     <icon src="https://a.jsrdn.com/hls/23240/daystar-espanol/logo_20251209_232554_70.png" />
   </channel>
-  <programme start="20260803140000 +0000" stop="20260803180000 +0000" channel="distro.5380">
+  <programme start="20260803190000 +0000" stop="20260803230000 +0000" channel="distro.5380">
     <title lang="es">Daystar Español</title>
     <desc lang="es">Daystar Español transmite contenido cristiano en español, 24 horas al día, los 7 días de la semana. Nuestro objetivo es difundir el Evangelio de Jesucristo, ofrecer programas de fe, adoración, enseñanza bíblica, testimonios, música cristiana y contenido para familias hispanohablantes. Llegamos a millones de hogares en Estados Unidos: cubrimos más del 90 % de los hogares hispanos con televisión en EE.UU. También transmitimos a toda Latinoamérica, e incluso tenemos cobertura internacional en otras regiones del mundo. Daystar Español es considera una de las redes cristianas en español de mayor crecimiento mundial.</desc>
   </programme>
